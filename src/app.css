@@ -393,25 +393,21 @@ pre {
 }
 
 /* entry transition */
-::view-transition-new(*):only-child {
-	animation: scale-in var(--view-transition-duration) var(--ease);
+::view-transition-new(root):only-child,
+::view-transition-new(sidebar):only-child,
+::view-transition-new(content):only-child {
+	animation: fade var(--view-transition-duration) var(--ease);
 }
 
 /* exit transition */
-::view-transition-old(*):only-child {
-	animation: scale-out var(--view-transition-duration) var(--ease);
+::view-transition-old(root):only-child,
+::view-transition-old(sidebar):only-child,
+::view-transition-old(content):only-child {
+	animation: fade var(--view-transition-duration) var(--ease) reverse forwards;
 }
 
-@keyframes scale-in {
+@keyframes fade {
 	from {
-		scale: 0;
-		opacity: 0;
-	}
-}
-
-@keyframes scale-out {
-	to {
-		scale: 0;
 		opacity: 0;
 	}
 }
