@@ -74,7 +74,7 @@ code.update`
 	<button onclick={() => count++}>
 		{double}
 	</button>
-`}
+`
 ```
 
 Animotion uses [Shiki Magic Move](https://shiki-magic-move.netlify.app/) to animate the code changes which does the diffing to know what changed, and then animates the changes.
@@ -121,7 +121,7 @@ The methods return a promise that is resolved when the transition is done:
 
 ## Using Expressions
 
-You can use expressions inside the template function:
+The `update`, `selectLines`, and `selectTokens` tag functions support expressions:
 
 ```svelte
 <script lang="ts">
@@ -175,11 +175,9 @@ If you use tabs Animotion auto-indents your code for you:
 
 If you want to opt-out of this feature, you can set `autoIndent` to false:
 
-
 ```svelte
 <Code	autoIndent={false} />
 ```
-
 
 ## Chaining code animations
 
