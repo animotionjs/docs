@@ -101,7 +101,7 @@ You can highlight tokens (inspect the code to see what token you can select):
 ```ts
 // select token
 code.selectToken`double`
-// select token on line
+// select token on line 3
 code.selectToken`3 double`
 // select multiple tokens
 code.selectToken`double {double}`
@@ -118,10 +118,46 @@ The methods return a promise that is resolved when the transition is done:
 }} />
 ```
 
+## Code Scrolling
+
+You might have a scrollable code block:
+
+```svelte
+<Code
+	bind:this={code}
+	lang="svelte"
+	theme="poimandres"
+	code={`...`}
+	class="h-[400px] overflow-y-auto"
+	options={{ duration: 600, stagger: 0.3, containerStyle: false }}
+/>
+```
+
+You can scroll to a line of code using the `scrollToLine` method:
+
+```ts
+await code.scrollToLine`2`
+```
+
+You can hide the scrollbar using CSS:
+
+```css
+pre::-webkit-scrollbar {
+	display: none;
+}
+```
+
+You can also create a Tailwind class:
+
+```css
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+```
 
 ## Using Expressions
 
-The `update`, `selectLines`, and `selectTokens` tag functions support expressions:
+The `update`, `selectLines`, `selectTokens`, and `scrollToLine` tag functions support expressions:
 
 ```svelte
 <script lang="ts">
