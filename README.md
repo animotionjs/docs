@@ -42,6 +42,7 @@ Before you begin, ensure you have the following installed:
 - `pnpm check` - Run type checking with Svelte Kit
 - `pnpm lint` - Check code formatting and linting
 - `pnpm format` - Format code with Prettier
+- `pnpm generate:llms` - Generate llms.txt file from documentation
 
 ## 📝 Contributing
 
