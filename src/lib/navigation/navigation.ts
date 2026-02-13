@@ -3,6 +3,7 @@ export const sections = [
 	{ title: 'What is animotion?', path: '/docs' },
 	{ title: 'Installation', path: '/docs/setup' },
 	{ title: `What's new`, path: '/docs/whats-new' },
+	{ title: `Using AI`, path: '/docs/llms' },
 	{ section: 'Concepts' },
 	{ title: 'Slides', path: '/docs/slides' },
 	{ title: 'Transitions', path: '/docs/transitions' },
