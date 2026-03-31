@@ -99,6 +99,11 @@
 
 <style>
 	nav {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+
+		background: var(--bg);
 		padding-block: var(--size-3);
 		view-transition-name: nav;
 

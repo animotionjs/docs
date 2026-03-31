@@ -46,7 +46,7 @@
 	.sections {
 		.sticky {
 			position: sticky;
-			top: 24px;
+			top: 100px;
 		}
 
 		& .section {
