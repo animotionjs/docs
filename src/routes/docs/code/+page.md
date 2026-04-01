@@ -79,9 +79,9 @@ code.update`
 
 Animotion uses [Shiki Magic Move](https://shiki-magic-move.netlify.app/) to animate the code changes which does the diffing to know what changed, and then animates the changes.
 
-## Code Highlighting
+## Code Selection
 
-You can highlight lines:
+You can select lines of code:
 
 ```ts
 // select line
@@ -96,15 +96,17 @@ code.selectLines`2-3,7`
 code.selectLines`*`
 ```
 
-You can highlight tokens (inspect the code to see what token you can select):
+You can select parts of the code:
 
 ```ts
-// select token
-code.selectToken`double`
-// select token on line 3
-code.selectToken`3 double`
-// select multiple tokens
-code.selectToken`double {double}`
+// select every token
+code.select`count`
+// select first match
+code.select`count:0`
+// select first match on line 4
+code.select`4 count:0`
+// add another selection
+code.selectAdd`() => count++`
 ```
 
 The methods return a promise that is resolved when the transition is done:
@@ -113,7 +115,7 @@ The methods return a promise that is resolved when the transition is done:
 <Action do={async () => {
 	await code.selectLines`2,3`
 	await code.selectLines`2-3,7`
-	await code.selectToken`double {double}`
+	await code.select`count`
 	await code.selectLines`*`
 }} />
 ```
