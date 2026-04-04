@@ -40,7 +40,10 @@
 
 		<Action do={() => code.selectLines`2,3`} />
 		<Action do={() => code.selectLines`2-3,7`} />
-		<Action do={() => code.selectToken`double {double}`} />
+		<Action do={() => {
+			code.select`double`
+			code.selectAdd`{double}`
+		}} />
 		<Action do={() => code.selectLines`*`} />
 	</Slide>
 </Presentation>

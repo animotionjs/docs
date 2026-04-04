@@ -22,8 +22,8 @@
 		/>
 
 		<Action do={() => code.selectLines`2`} />
-		<Action do={() => code.selectToken`5 count ++`} />
-		<Action do={() => code.selectToken`{count}`} />
+		<Action do={() => code.select`count++`} />
+		<Action do={() => code.select`{count}`} />
 		<Action do={() => code.selectLines`*`} />
 	</Slide>
 </Presentation>

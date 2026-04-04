@@ -52,7 +52,10 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 
 		<Action do={() => code.selectLines`2,3`} />
 		<Action do={() => code.selectLines`2-3,7`} />
-		<Action do={() => code.selectToken`double {double}`} />
+		<Action do={() => {
+			code.select`double`
+			code.selectAdd`{double}`
+		}} />
 		<Action do={() => code.selectLines`*`} />
 	</Slide>
 </Presentation>
@@ -78,6 +81,38 @@ code.update`
 ```
 
 Animotion uses [Shiki Magic Move](https://shiki-magic-move.netlify.app/) to animate the code changes which does the diffing to know what changed, and then animates the changes.
+
+## Experimental Code Update API
+
+Having to pass the entire code string to the `update` method each time is tedious and repetitive. You can try the experimental code update API to surgically update the code:
+
+```svelte
+<Code
+	bind:this={code}
+	lang="svelte"
+	theme="poimandres"
+	code={`
+		<script lang="ts">
+			let count = $state(0)
+		<\/script>
+	`}
+/>
+````
+
+```ts
+// append code with an empty line
+code.append`
+	<button onclick={() => count += 1}>
+		// ...
+	</button>
+`
+// insert code at line 3 with indent level of 1
+code.insert`3:1 let double = $derived(count * 2)`,
+// replace the exact code
+code.replace('// ...', '{count} * 2 = {double}'),
+// remove line 3 and lines 6 to 8
+code.remove`3,6-8`
+```
 
 ## Code Selection
 
@@ -159,7 +194,7 @@ You can also create a Tailwind class:
 
 ## Using Expressions
 
-The `update`, `selectLines`, `selectTokens`, and `scrollToLine` tag functions support expressions:
+The `update`, `selectLines`, and `scrollToLine` tag functions support expressions:
 
 ```svelte
 <script lang="ts">
@@ -195,7 +230,7 @@ Indenting code creates extra whitespace:
 />
 ```
 
-If you use tabs Animotion auto-indents your code for you:
+Animotion detects if you're using tabs or spaces and dedents the code for you:
 
 ```svelte
 <Code
@@ -264,7 +299,10 @@ Instead of creating actions for the code animations yourself, you can use the `c
 	actions={[
 		() => code.selectLines`2,3`,
 		() => code.selectLines`2-3,7`,
-		() => code.selectToken`double {double}`,
+		() => {
+			code.select`double`
+			code.selectAdd`{double}`
+		}
 		() => code.selectLines`*`
 	]}
 />

@@ -105,3 +105,30 @@ You can pass an `options` prop to the `<Presentation>` component:
 ```
 
 You can change the slide animation, show or hide the controls, and show the current slide in the URL hash among other options.
+
+## Custom slide transitions
+
+You can override the default transitions in `app.css`:
+
+```css
+.reveal .slides > section {
+	transition:
+		transform 0.6s ease,
+		opacity 0.6s ease !important;
+
+	&.past {
+		transform: translateY(100%) scale(0.8) !important;
+		opacity: 0;
+	}
+
+	&.present {
+		transform: translateY(0) scale(1) !important;
+		opacity: 1;
+	}
+
+	&.future {
+		transform: translateY(100%) scale(0.8) !important;
+		opacity: 0;
+	}
+}
+```
