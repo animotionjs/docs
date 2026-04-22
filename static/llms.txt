@@ -8,14 +8,14 @@ To create a slide use the `<Slide>` component inside the `<Presentation>` compon
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
+  import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
   <Slide class="h-full place-content-center place-items-center">
     <p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
   </Slide>
-  
+
   <Slide class="h-full place-content-center place-items-center">
     <img class="rounded-lg drop-shadow-sm" src="/nod-of-approval.gif" />
   </Slide>
@@ -32,7 +32,7 @@ You can use the `in` and `out` props to pass a callback which runs when the slid
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
+  import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
@@ -54,14 +54,14 @@ Svelte is a declarative JavaScript framework, so components are a great way to o
 
 ```svelte
 <script>
-  import { Slide } from '@animotion/core'
-  import { tween } from '@animotion/motion'
+  import { Slide } from '@animotion/core';
+  import { tween } from '@animotion/motion';
 
-  let progress = tween(0)
+  let progress = tween(0);
 
   async function animate() {
-    await progress.to(1_000_000)
-  }  
+    await progress.to(1_000_000);
+  }
 </script>
 
 <button onclick={animate}>
@@ -73,8 +73,8 @@ You can import, and use the `<Progress>` component inside the slide:
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
-  import Progress from '$lib/progress.svelte'
+  import { Presentation, Slide } from '@animotion/core';
+  import Progress from '$lib/progress.svelte';
 </script>
 
 <Presentation>
@@ -90,7 +90,7 @@ You can pass an `options` prop to the `<Presentation>` component:
 
 ```svelte
 <script>
-  import { Presentation } from '@animotion/core'
+  import { Presentation } from '@animotion/core';
 </script>
 
 <Presentation options={{ transition: 'slide' }}>
@@ -139,23 +139,18 @@ You can use the `<Transition>` component to animate changes in your slide like m
 
 ```svelte
 <script lang="ts">
-  import { Presentation, Slide, Transition } from '@animotion/core'
+  import { Presentation, Slide, Transition } from '@animotion/core';
 
-  let text: HTMLParagraphElement
+  let text: HTMLParagraphElement;
 </script>
 
 <Presentation>
   <Slide class="h-full place-content-center place-items-center">
     <Transition visible>
-      <p bind:this={text} class="text-8xl font-bold drop-shadow-sm">
-        🪄 Animotion
-      </p>
+      <p bind:this={text} class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
     </Transition>
 
-    <Transition
-      do={() => text.classList.replace('text-8xl', 'text-6xl')}
-      class="mt-16"
-    >
+    <Transition do={() => text.classList.replace('text-8xl', 'text-6xl')} class="mt-16">
       <img class="rounded-lg drop-shadow-sm" src="/nod-of-approval.gif" />
     </Transition>
   </Slide>
@@ -186,10 +181,10 @@ This is very useful for revealing or hiding elements like a code block and its o
 
 ```svelte
 <script>
-  import { Code, Slide, Transition } from '@animotion/core'
-  import Example from './example.svelte'
+  import { Code, Slide, Transition } from '@animotion/core';
+  import Example from './example.svelte';
 
-  let state = $state('none')
+  let state = $state('none');
 </script>
 
 <Slide>
@@ -205,8 +200,8 @@ This is very useful for revealing or hiding elements like a code block and its o
     </Transition>
   {/if}
 
-  <Transition do={() => state = 'code'}>
-  <Transition do={() => state = 'output'}>
+  <Transition do={() => state = 'code'} />
+  <Transition do={() => state = 'output'} />
 </Slide>
 ```
 
@@ -284,13 +279,7 @@ You can create your own entry and exit animations inside `app.css`:
 
 ```svelte
 {#each items as item, i}
-  <Transition
-    entry="rotate"
-    exit="scale-out"
-    duration={1}
-    delay={i * 0.1}
-    visible
-  />
+  <Transition entry="rotate" exit="scale-out" duration={1} delay={i * 0.1} visible />
 {/each}
 ```
 
@@ -302,7 +291,7 @@ You can use the `order` prop to specify the order in which the elements should t
 
 ```svelte
 <script>
-  import { Presentation, Slide, Transition } from '@animotion/core'
+  import { Presentation, Slide, Transition } from '@animotion/core';
 </script>
 
 <Presentation>
@@ -325,10 +314,10 @@ You can do impossible layout animations, like animating between a `flex` and `gr
 
 ```svelte
 <script>
-  import { Presentation, Slide, Transition } from '@animotion/core'
+  import { Presentation, Slide, Transition } from '@animotion/core';
 
-  let items = $state([1, 2, 3, 4])
-  let layout = $state('flex gap-4')
+  let items = $state([1, 2, 3, 4]);
+  let layout = $state('flex gap-4');
 </script>
 
 <Presentation>
@@ -347,12 +336,12 @@ You can do impossible layout animations, like animating between a `flex` and `gr
     <!-- you can pass a transitions array for convenience -->
     <Transition
       transitions={[
-        () => layout = 'grid grid-cols-2 grid-rows-2 gap-4',
-        () => items = [4, 3, 2, 1],
-        () => items = [2, 1, 4, 3],
-        () => items = [4, 3, 2, 1],
-        () => items = [1, 2, 3, 4],
-        () => layout = 'flex gap-4'
+        () => (layout = 'grid grid-cols-2 grid-rows-2 gap-4'),
+        () => (items = [4, 3, 2, 1]),
+        () => (items = [2, 1, 4, 3]),
+        () => (items = [4, 3, 2, 1]),
+        () => (items = [1, 2, 3, 4]),
+        () => (layout = 'flex gap-4')
       ]}
     />
   </Slide>
@@ -369,9 +358,9 @@ You can use the `<Action>` component to step through the presentation, and run c
 
 ```svelte
 <script lang="ts">
-  import { Presentation, Slide, Code, Action } from '@animotion/core'
+  import { Presentation, Slide, Code, Action } from '@animotion/core';
 
-  let code: ReturnType<typeof Code>
+  let code: Code;
 </script>
 
 <Presentation>
@@ -382,7 +371,7 @@ You can use the `<Action>` component to step through the presentation, and run c
       theme="poimandres"
       code={`
         <script>
-          let count = $state(0)
+          let count = $state(0);
         <\/script>
 
         <button onclick={() => count++}>
@@ -406,7 +395,7 @@ Instead of having to define each action separately, you can use the `actions` pr
 ```svelte
 <Action
   undo={() => {
-    example.selectLines`*`
+    example.selectLines`*`;
   }}
   actions={[
     () => example.selectLines`2`,
@@ -438,9 +427,9 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 
 ```svelte
 <script lang="ts">
-  import { Presentation, Slide, Code, Action } from '@animotion/core'
+  import { Presentation, Slide, Code, Action } from '@animotion/core';
 
-  let code: ReturnType<typeof Code>
+  let code: Code;
 </script>
 
 <Presentation>
@@ -451,8 +440,8 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
       theme="poimandres"
       code={`
         <script>
-          let count = 0
-          $: double = count * 2
+          let count = 0;
+          $: double = count * 2;
         <\/script>
 
         <button on:click={() => count++}>
@@ -466,8 +455,8 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
       do={() =>
         code.update`
           <script>
-            let count = $state(0)
-            let double = $derived(count * 2)
+            let count = $state(0);
+            let double = $derived(count * 2);
           <\/script>
 
           <button onclick={() => count++}>
@@ -478,10 +467,12 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 
     <Action do={() => code.selectLines`2,3`} />
     <Action do={() => code.selectLines`2-3,7`} />
-    <Action do={() => {
-      code.select`double`
-      code.selectAdd`{double}`
-    }} />
+    <Action
+      do={() => {
+        code.select`double`;
+        code.selectAdd`{double}`;
+      }}
+    />
     <Action do={() => code.selectLines`*`} />
   </Slide>
 </Presentation>
@@ -496,14 +487,14 @@ You can animate changes in your code by using the `update` method:
 ```ts
 code.update`
   <script>
-    let count = $state(0)
-    let double = $derived(count * 2)
+    let count = $state(0);
+    let double = $derived(count * 2);
   <\/script>
 
   <button onclick={() => count++}>
     {double}
   </button>
-`
+`;
 ```
 
 Animotion uses [Shiki Magic Move](https://shiki-magic-move.netlify.app/) to animate the code changes which does the diffing to know what changed, and then animates the changes.
@@ -519,11 +510,11 @@ Having to pass the entire code string to the `update` method each time is tediou
   theme="poimandres"
   code={`
     <script lang="ts">
-      let count = $state(0)
+      let count = $state(0);
     <\/script>
   `}
 />
-````
+```
 
 ```ts
 // append code with an empty line
@@ -531,13 +522,13 @@ code.append`
   <button onclick={() => count += 1}>
     // ...
   </button>
-`
+`;
 // insert code at line 3 with indent level of 1
-code.insert`3:1 let double = $derived(count * 2)`,
-// replace the exact code
-code.replace('// ...', '{count} * 2 = {double}'),
-// remove line 3 and lines 6 to 8
-code.remove`3,6-8`
+(code.insert`3:1 let double = $derived(count * 2);`,
+  // replace the exact code
+  code.replace('// ...', '{count} * 2 = {double}'),
+  // remove line 3 and lines 6 to 8
+  code.remove`3,6-8`);
 ```
 
 ## Code Selection
@@ -546,39 +537,41 @@ You can select lines of code:
 
 ```ts
 // select line
-code.selectLines`2`
+code.selectLines`2`;
 // select multiple lines
-code.selectLines`2,3`
+code.selectLines`2,3`;
 // select lines range
-code.selectLines`2-3`
+code.selectLines`2-3`;
 // select lines range and lines
-code.selectLines`2-3,7`
+code.selectLines`2-3,7`;
 // select all lines
-code.selectLines`*`
+code.selectLines`*`;
 ```
 
 You can select parts of the code:
 
 ```ts
 // select every token
-code.select`count`
+code.select`count`;
 // select first match
-code.select`count:0`
+code.select`count:0`;
 // select first match on line 4
-code.select`4 count:0`
+code.select`4 count:0`;
 // add another selection
-code.selectAdd`() => count++`
+code.selectAdd`() => count++`;
 ```
 
 The methods return a promise that is resolved when the transition is done:
 
 ```svelte
-<Action do={async () => {
-  await code.selectLines`2,3`
-  await code.selectLines`2-3,7`
-  await code.select`count`
-  await code.selectLines`*`
-}} />
+<Action
+  do={async () => {
+    await code.selectLines`2,3`;
+    await code.selectLines`2-3,7`;
+    await code.select`count`;
+    await code.selectLines`*`;
+  }}
+/>
 ```
 
 ## Code Scrolling
@@ -599,7 +592,7 @@ You might have a scrollable code block:
 You can scroll to a line of code using the `scrollToLine` method:
 
 ```ts
-await code.scrollToLine`2`
+await code.scrollToLine`2`;
 ```
 
 You can hide the scrollbar using CSS:
@@ -624,15 +617,15 @@ The `update`, `selectLines`, and `scrollToLine` tag functions support expression
 
 ```svelte
 <script lang="ts">
-  let expression = 'false'
+  let expression = 'false';
 </script>
 
 <!-- ... -->
 
 <Action
   do={() => {
-    expression = 'true'
-    code.update`let bool = ${expression}`    
+    expression = 'true';
+    code.update`let bool = ${expression}`;
   }}
 >
 ```
@@ -645,8 +638,8 @@ Indenting code creates extra whitespace:
 <Code
   code={`
 ->-><script>
-->->->let count = 0
-->->->$: double = count * 2
+->->->let count = 0;
+->->->$: double = count * 2;
 ->-><\/script>
 
 ->-><button on:click={() => count++}>
@@ -662,8 +655,8 @@ Animotion detects if you're using tabs or spaces and dedents the code for you:
 <Code
   code={`
     <script>
-    ->let count = 0
-    ->$: double = count * 2
+    ->let count = 0;
+    ->$: double = count * 2;
     <\/script>
     <button on:click={() => count++}>
     ->{double}
@@ -675,7 +668,7 @@ Animotion detects if you're using tabs or spaces and dedents the code for you:
 If you want to opt-out of this feature, you can set `autoIndent` to false:
 
 ```svelte
-<Code  autoIndent={false} />
+<Code autoIndent={false} />
 ```
 
 ## Chaining code animations
@@ -684,21 +677,21 @@ Instead of creating actions for the code animations yourself, you can use the `c
 
 ```svelte
 <script lang="ts">
-  import { Code } from '@animotion/core'
+  import { Code } from '@animotion/core';
 
   // get a reference to the instance
-  let code: ReturnType<typeof Code>
+  let code: Code;
 </script>
 
 <Code
-  ref={(ref) => code = ref}
+  ref={(ref) => (code = ref)}
   lang="svelte"
   theme="poimandres"
   codes={[
     `
       <script>
-        let count = 0
-        $: double = count * 2
+        let count = 0;
+        $: double = count * 2;
       <\/script>
 
       <button on:click={() => count++}>
@@ -707,8 +700,8 @@ Instead of creating actions for the code animations yourself, you can use the `c
     `,
     `
       <script>
-        let count = $state(0)
-        let double = $derived(count * 2)
+        let count = $state(0);
+        let double = $derived(count * 2);
       <\/script>
 
       <button onclick={() => count++}>
@@ -720,15 +713,15 @@ Instead of creating actions for the code animations yourself, you can use the `c
 
 <Action
   undo={() => {
-    code.selectLines`*`
+    code.selectLines`*`;
   }}
   actions={[
     () => code.selectLines`2,3`,
     () => code.selectLines`2-3,7`,
     () => {
-      code.select`double`
-      code.selectAdd`{double}`
-    }
+      code.select`double`;
+      code.selectAdd`{double}`;
+    },
     () => code.selectLines`*`
   ]}
 />
@@ -745,7 +738,7 @@ Having a closing tag like `</script>` in your code block is going to cause probl
       // ...
     <\/script>
   `}
-<Code>
+</Code>
 ```
 
 # Motion
@@ -758,14 +751,14 @@ Sometimes you need to animate values outside of CSS like SVG and Canvas values. 
 
 ```svelte
 <script>
-  import { Presentation, Slide, Action } from '@animotion/core'
-  import { tween } from '@animotion/motion'
+  import { Presentation, Slide, Action } from '@animotion/core';
+  import { tween } from '@animotion/motion';
 
-  let cx = tween(0)
+  let cx = tween(0);
 
   async function animate() {
-    await cx.to(600)
-    await cx.to(0, { delay: 300 })
+    await cx.to(600);
+    await cx.to(0, { delay: 300 });
   }
 </script>
 
@@ -798,14 +791,14 @@ You can animate any value, including CSS properties using the `style` attribute,
 
 ```svelte
 <script>
-  import { Presentation, Slide, Action } from '@animotion/core'
-  import { tween } from '@animotion/motion'
+  import { Presentation, Slide, Action } from '@animotion/core';
+  import { tween } from '@animotion/motion';
 
-  let text = tween(1)
+  let text = tween(1);
 
   async function animate() {
-    await text.to(3)
-    await text.to(1)
+    await text.to(3);
+    await text.to(1);
   }
 </script>
 
@@ -830,29 +823,21 @@ You can `tween` a single value, objects, arrays, and override the default animat
 
 ```svelte
 <script>
-  import { Presentation, Slide, Action } from '@animotion/core'
-  import { tween } from '@animotion/motion'
+  import { Presentation, Slide, Action } from '@animotion/core';
+  import { tween } from '@animotion/motion';
 
-  const circle = tween(
-    { x: 0, y: 100, r: 100, fill: '#00ffff' },
-    { duration: 1500 }
-  )
+  const circle = tween({ x: 0, y: 100, r: 100, fill: '#00ffff' }, { duration: 1500 });
 
   async function animate() {
-    await circle.to({ x: 600, fill: '#ffff00' }, { delay: 300 })
-    await circle.to({ x: 0, fill: '#00ffff' })
+    await circle.to({ x: 600, fill: '#ffff00' }, { delay: 300 });
+    await circle.to({ x: 0, fill: '#00ffff' });
   }
 </script>
 
 <Presentation>
   <Slide>
     <svg viewBox="-100 0 800 200">
-      <circle
-        cx={circle.x}
-        cy={circle.y}
-        r={circle.r}
-        fill={circle.fill}
-      />
+      <circle cx={circle.x} cy={circle.y} r={circle.r} fill={circle.fill} />
     </svg>
 
     <Action do={animate} />
@@ -870,33 +855,22 @@ If you want to play multiple animations at the same time without having to think
 
 ```svelte
 <script>
-  import { Presentation, Slide, Action } from '@animotion/core'
-  import { tween, all } from '@animotion/motion'
+  import { Presentation, Slide, Action } from '@animotion/core';
+  import { tween, all } from '@animotion/motion';
 
-  let circle = tween({ x: 0, y: 100, r: 100, fill: '#00ffff' })
-  let text = tween({ count: 0 })
+  let circle = tween({ x: 0, y: 100, r: 100, fill: '#00ffff' });
+  let text = tween({ count: 0 });
 
   async function animate() {
-    await all(
-      circle.to({ x: 600, fill: '#ffff00' }),
-      text.to({ count: 600 })
-    )
-    await all(
-      circle.to({ x: 0, fill: '#00ffff' }),
-      text.to({ count: 0 })
-    )
+    await all(circle.to({ x: 600, fill: '#ffff00' }), text.to({ count: 600 }));
+    await all(circle.to({ x: 0, fill: '#00ffff' }), text.to({ count: 0 }));
   }
 </script>
 
 <Presentation>
   <Slide>
     <svg width="800" height="200" viewBox="-100 0 800 200">
-      <circle
-        cx={circle.x}
-        cy={circle.y}
-        r={circle.r}
-        fill={circle.fill}
-      />
+      <circle cx={circle.x} cy={circle.y} r={circle.r} fill={circle.fill} />
 
       <text
         x={circle.x}
@@ -922,13 +896,13 @@ become available from the root `/` of your site:
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
-  import { tween } from '@animotion/motion'
+  import { Presentation, Slide } from '@animotion/core';
+  import { tween } from '@animotion/motion';
 
-  let circle = tween({ x: 0 })
-  
+  let circle = tween({ x: 0 });
+
   async function animate() {
-    await circle.sfx('/sfx/transition.mp3').to({ x: 400 })
+    await circle.sfx('/sfx/transition.mp3').to({ x: 400 });
   }
 </script>
 
@@ -948,10 +922,10 @@ you can use the `reset` method on the `tween` to reset the animation back to its
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
-  import { tween } from '@animotion/motion'
+  import { Presentation, Slide } from '@animotion/core';
+  import { tween } from '@animotion/motion';
 
-  let value = tween(0)
+  let value = tween(0);
 </script>
 
 <Presentation>
@@ -971,9 +945,9 @@ You have complete control over unstyled elements using Tailwind:
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
+  import { Presentation, Slide } from '@animotion/core';
 
-  let circle = 'grid h-[200px] w-[200px] place-content-center rounded-full'
+  let circle = 'grid h-[200px] w-[200px] place-content-center rounded-full';
 </script>
 
 <Presentation>
@@ -997,16 +971,16 @@ You can write regular CSS inside a `<style>` tag in Svelte. Styles are scoped to
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
+  import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
   <Slide>
-      <div class="circles">
-        <div class="circle red">red</div>
-        <div class="circle green">green</div>
-        <div class="circle blue">blue</div>
-      </div>
+    <div class="circles">
+      <div class="circle red">red</div>
+      <div class="circle green">green</div>
+      <div class="circle blue">blue</div>
+    </div>
   </Slide>
 </Presentation>
 
@@ -1046,15 +1020,14 @@ Animotion exposes the `Reveal` instance using the `getPresentation` method, enab
 
 ```svelte
 <script>
-  import { getPresentation } from '@animotion/core'
+  import { getPresentation } from '@animotion/core';
 
-  const presentation = getPresentation()
+  const presentation = getPresentation();
 </script>
 
 <button onclick={() => presentation.slides.prev()}>prev</button>
 <button onclick={() => presentation.slides.next()}>next</button>
 ```
-
 
 You can look at the available [API methods](https://revealjs.com/api/).
 
@@ -1069,14 +1042,14 @@ This is how you create slides using the default setup:
 ```svelte
 <!-- routes/+page.svelte -->
 <script>
-  import { Presentation, Slide } from '@animotion/core'
+  import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
   <Slide class="h-full place-content-center place-items-center">
     <p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
   </Slide>
-  
+
   <Slide class="h-full place-content-center place-items-center">
     <img class="rounded-lg drop-shadow-sm" src="/nod-of-approval.gif" />
   </Slide>
@@ -1086,8 +1059,7 @@ This is how you create slides using the default setup:
 This is how you create slides using file-based slides:
 
 ```svelte
-<!-- slides/100/slide.svelte -->
-<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
+<!-- slides/100/slide.svelte --><p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 ```
 
 ```svelte
@@ -1103,32 +1075,31 @@ If you need to pass props to the `<Slide>` use `<script module>`:
 
 ```svelte
 <script module>
-  import { defineProps } from '@animotion/core'
+  import { defineProps } from '@animotion/core';
 
   export const props = defineProps({
     in: () => alert('in'),
     out: () => alert('out')
-  })
+  });
 </script>
 
-<!-- /slides/100/slide.svelte -->
-<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
+<!-- /slides/100/slide.svelte --><p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 ```
 
 For regular imports use the `<script>` tag:
 
 ```svelte
 <script module>
-  import { defineProps } from '@animotion/core'
+  import { defineProps } from '@animotion/core';
 
   export const props = defineProps({
     in: () => alert('in'),
     out: () => alert('out')
-  })
+  });
 </script>
 
 <script>
-  import { Transition } from '@animotion/core'
+  import { Transition } from '@animotion/core';
 </script>
 
 <!-- slides/100/slide.svelte -->
@@ -1137,7 +1108,6 @@ For regular imports use the `<script>` tag:
 </Transition>
 ```
 
-
 ## File-Based Slides Setup
 
 You can also set up file-based slides yourself by copying this code inside `src/routes/+page.svelte`:
@@ -1145,7 +1115,7 @@ You can also set up file-based slides yourself by copying this code inside `src/
 ```svelte
 <!-- routes/+page.svelte -->
 <script>
-  import { Presentation, Slides } from '@animotion/core'
+  import { Presentation, Slides } from '@animotion/core';
 </script>
 
 <Presentation
@@ -1153,7 +1123,7 @@ You can also set up file-based slides yourself by copying this code inside `src/
     history: true,
     transition: 'slide',
     controls: false,
-    progress: true,
+    progress: true
   }}
 >
   <Slides center={true} />
@@ -1170,7 +1140,7 @@ You can record your presentation using the `<Recorder>` component:
 
 ```svelte
 <script>
-  import { Recorder } from '@animotion/core'
+  import { Recorder } from '@animotion/core';
 </script>
 
 <Recorder />
@@ -1189,7 +1159,7 @@ These are the default video settings:
 
 ```svelte
 <script>
-  import { Recorder } from '@animotion/core'
+  import { Recorder } from '@animotion/core';
 </script>
 
 <Recorder
@@ -1217,7 +1187,7 @@ You can change the video container, and codecs like in this example which uses t
 
 ```svelte
 <script>
-  import { Recorder } from '@animotion/core'
+  import { Recorder } from '@animotion/core';
 </script>
 
 <Recorder codec="video/mp4;codecs='avc1.4d002a,mp4a.40.2'" />
@@ -1233,7 +1203,7 @@ You can write down notes inside the `<Notes>` component for the current slide wh
 
 ```svelte
 <script>
-  import { Presentation, Slide, Notes } from '@animotion/core'
+  import { Presentation, Slide, Notes } from '@animotion/core';
 </script>
 
 <Presentation>
@@ -1254,7 +1224,7 @@ You can use [KaTeX](https://katex.org/) to write math formulas.
 
 ```svelte
 <script lang="ts">
-  import { Presentation, Slide, Transition } from '@animotion/core'
+  import { Presentation, Slide, Transition } from '@animotion/core';
 </script>
 
 <Presentation>
