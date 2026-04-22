@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Embed as Presentation, Slide, Code, Action } from '@animotion/core';
 
-	let code: ReturnType<typeof Code>;
+	let code: Code;
 </script>
 
 <Presentation>

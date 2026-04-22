@@ -14,7 +14,7 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 <script lang="ts">
 	import { Presentation, Slide, Code, Action } from '@animotion/core';
 
-	let code: ReturnType<typeof Code>;
+	let code: Code;
 </script>
 
 <Presentation>
@@ -25,8 +25,8 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 			theme="poimandres"
 			code={`
 				<script>
-					let count = 0
-					$: double = count * 2
+					let count = 0;
+					$: double = count * 2;
 				<\/script>
 
 				<button on:click={() => count++}>
@@ -40,8 +40,8 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 			do={() =>
 				code.update`
 					<script>
-						let count = $state(0)
-						let double = $derived(count * 2)
+						let count = $state(0);
+						let double = $derived(count * 2);
 					<\/script>
 
 					<button onclick={() => count++}>
@@ -72,8 +72,8 @@ You can animate changes in your code by using the `update` method:
 ```ts
 code.update`
 	<script>
-		let count = $state(0)
-		let double = $derived(count * 2)
+		let count = $state(0);
+		let double = $derived(count * 2);
 	<\/script>
 
 	<button onclick={() => count++}>
@@ -95,7 +95,7 @@ Having to pass the entire code string to the `update` method each time is tediou
 	theme="poimandres"
 	code={`
 		<script lang="ts">
-			let count = $state(0)
+			let count = $state(0);
 		<\/script>
 	`}
 />
@@ -109,7 +109,7 @@ code.append`
 	</button>
 `;
 // insert code at line 3 with indent level of 1
-(code.insert`3:1 let double = $derived(count * 2)`,
+(code.insert`3:1 let double = $derived(count * 2);`,
 	// replace the exact code
 	code.replace('// ...', '{count} * 2 = {double}'),
 	// remove line 3 and lines 6 to 8
@@ -202,15 +202,15 @@ The `update`, `selectLines`, and `scrollToLine` tag functions support expression
 
 ```svelte
 <script lang="ts">
-	let expression = 'false'
+	let expression = 'false';
 </script>
 
 <!-- ... -->
 
 <Action
 	do={() => {
-		expression = 'true'
-		code.update`let bool = ${expression}`
+		expression = 'true';
+		code.update`let bool = ${expression}`;
 	}}
 >
 ```
@@ -223,8 +223,8 @@ Indenting code creates extra whitespace:
 <Code
 	code={`
 ->-><script>
-->->->let count = 0
-->->->$: double = count * 2
+->->->let count = 0;
+->->->$: double = count * 2;
 ->-><\/script>
 
 ->-><button on:click={() => count++}>
@@ -240,8 +240,8 @@ Animotion detects if you're using tabs or spaces and dedents the code for you:
 <Code
 	code={`
 		<script>
-		->let count = 0
-		->$: double = count * 2
+		->let count = 0;
+		->$: double = count * 2;
 		<\/script>
 		<button on:click={() => count++}>
 		->{double}
@@ -262,21 +262,21 @@ Instead of creating actions for the code animations yourself, you can use the `c
 
 ```svelte
 <script lang="ts">
-	import { Code } from '@animotion/core'
+	import { Code } from '@animotion/core';
 
 	// get a reference to the instance
-	let code: ReturnType<typeof Code>
+	let code: Code;
 </script>
 
 <Code
-	ref={(ref) => code = ref}
+	ref={(ref) => (code = ref)}
 	lang="svelte"
 	theme="poimandres"
 	codes={[
 		`
 			<script>
-				let count = 0
-				$: double = count * 2
+				let count = 0;
+				$: double = count * 2;
 			<\/script>
 
 			<button on:click={() => count++}>
@@ -285,8 +285,8 @@ Instead of creating actions for the code animations yourself, you can use the `c
 		`,
 		`
 			<script>
-				let count = $state(0)
-				let double = $derived(count * 2)
+				let count = $state(0);
+				let double = $derived(count * 2);
 			<\/script>
 
 			<button onclick={() => count++}>
@@ -298,15 +298,15 @@ Instead of creating actions for the code animations yourself, you can use the `c
 
 <Action
 	undo={() => {
-		code.selectLines`*`
+		code.selectLines`*`;
 	}}
 	actions={[
 		() => code.selectLines`2,3`,
 		() => code.selectLines`2-3,7`,
 		() => {
-			code.select`double`
-			code.selectAdd`{double}`
-		}
+			code.select`double`;
+			code.selectAdd`{double}`;
+		},
 		() => code.selectLines`*`
 	]}
 />
@@ -318,10 +318,10 @@ Having a closing tag like `</script>` in your code block is going to cause probl
 
 ```svelte
 <Code>
-  code={`
-    <script>
-      // ...
-    <\/script>
-  `}
-<Code>
+	code={`
+		<script>
+			// ...
+		<\/script>
+	`}
+</Code>
 ```

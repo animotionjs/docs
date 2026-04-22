@@ -14,7 +14,7 @@ You can use the `<Action>` component to step through the presentation, and run c
 <script lang="ts">
 	import { Presentation, Slide, Code, Action } from '@animotion/core';
 
-	let code: ReturnType<typeof Code>;
+	let code: Code;
 </script>
 
 <Presentation>
@@ -25,13 +25,13 @@ You can use the `<Action>` component to step through the presentation, and run c
 			theme="poimandres"
 			code={`
 				<script>
-					let count = $state(0)
+					let count = $state(0);
 				<\/script>
 
 				<button onclick={() => count++}>
 					{count}
 				</button>
-      `}
+			`}
 		/>
 
 		<Action do={() => code.selectLines`2`} />

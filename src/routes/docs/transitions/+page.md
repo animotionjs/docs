@@ -58,10 +58,10 @@ This is very useful for revealing or hiding elements like a code block and its o
 
 ```svelte
 <script>
-	import { Code, Slide, Transition } from '@animotion/core'
-	import Example from './example.svelte'
+	import { Code, Slide, Transition } from '@animotion/core';
+	import Example from './example.svelte';
 
-	let state = $state('none')
+	let state = $state('none');
 </script>
 
 <Slide>
@@ -77,8 +77,8 @@ This is very useful for revealing or hiding elements like a code block and its o
 		</Transition>
 	{/if}
 
-	<Transition do={() => state = 'code'}>
-	<Transition do={() => state = 'output'}>
+	<Transition do={() => state = 'code'} />
+	<Transition do={() => state = 'output'} />
 </Slide>
 ```
 
