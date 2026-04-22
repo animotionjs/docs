@@ -1,3 +1,3 @@
 export async function load() {
-	return { title: 'Motion' }
+	return { title: 'Motion' };
 }

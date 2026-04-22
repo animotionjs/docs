@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { fade } from '$lib/transitions/fade'
+	import { fade } from '$lib/transitions/fade';
 
-	let videoEl: HTMLVideoElement
+	let videoEl: HTMLVideoElement;
 </script>
 
 <main class="container place-content-center">

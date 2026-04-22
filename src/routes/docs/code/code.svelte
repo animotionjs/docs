@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Embed as Presentation, Slide, Code, Action } from '@animotion/core'
+	import { Embed as Presentation, Slide, Code, Action } from '@animotion/core';
 
-	let code: ReturnType<typeof Code>
+	let code: ReturnType<typeof Code>;
 </script>
 
 <Presentation>
@@ -40,10 +40,12 @@
 
 		<Action do={() => code.selectLines`2,3`} />
 		<Action do={() => code.selectLines`2-3,7`} />
-		<Action do={() => {
-			code.select`double`
-			code.selectAdd`{double}`
-		}} />
+		<Action
+			do={() => {
+				code.select`double`;
+				code.selectAdd`{double}`;
+			}}
+		/>
 		<Action do={() => code.selectLines`*`} />
 	</Slide>
 </Presentation>

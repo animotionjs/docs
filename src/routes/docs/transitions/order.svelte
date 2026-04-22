@@ -1,8 +1,8 @@
 <script>
-	import { Embed as Presentation, Slide, Transition } from '@animotion/core'
+	import { Embed as Presentation, Slide, Transition } from '@animotion/core';
 
 	const box =
-		'grid h-[180px] w-[180px] place-content-center rounded-2xl border-t-2 border-white bg-gray-200 text-6xl font-semibold text-black shadow-2xl'
+		'grid h-[180px] w-[180px] place-content-center rounded-2xl border-t-2 border-white bg-gray-200 text-6xl font-semibold text-black shadow-2xl';
 </script>
 
 <Presentation>

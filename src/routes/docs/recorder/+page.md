@@ -6,7 +6,7 @@ You can record your presentation using the `<Recorder>` component:
 
 ```svelte
 <script>
-	import { Recorder } from '@animotion/core'
+	import { Recorder } from '@animotion/core';
 </script>
 
 <Recorder />
@@ -25,7 +25,7 @@ These are the default video settings:
 
 ```svelte
 <script>
-	import { Recorder } from '@animotion/core'
+	import { Recorder } from '@animotion/core';
 </script>
 
 <Recorder
@@ -53,7 +53,7 @@ You can change the video container, and codecs like in this example which uses t
 
 ```svelte
 <script>
-	import { Recorder } from '@animotion/core'
+	import { Recorder } from '@animotion/core';
 </script>
 
 <Recorder codec="video/mp4;codecs='avc1.4d002a,mp4a.40.2'" />

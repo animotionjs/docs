@@ -1,3 +1,3 @@
 export async function load() {
-	return { title: 'Speaker Notes' }
+	return { title: 'Speaker Notes' };
 }

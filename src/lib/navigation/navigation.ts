@@ -20,15 +20,15 @@ export const sections = [
 	{ title: 'Notes', path: '/docs/notes' },
 	{ title: 'Math', path: '/docs/math' },
 	{ section: 'Deployment' },
-	{ title: 'Adapters', path: '/docs/deployment' },
-]
+	{ title: 'Adapters', path: '/docs/deployment' }
+];
 
-const titles = sections.filter((section) => section.title)
+const titles = sections.filter((section) => section.title);
 
 export function getNavigation(path: string | null) {
-	const currentPath = titles.findIndex((section) => section.path === path)
-	const previous = titles[currentPath - 1]
-	const current = titles[currentPath]
-	const next = titles[currentPath + 1]
-	return { previous, current, next }
+	const currentPath = titles.findIndex((section) => section.path === path);
+	const previous = titles[currentPath - 1];
+	const current = titles[currentPath];
+	const next = titles[currentPath + 1];
+	return { previous, current, next };
 }

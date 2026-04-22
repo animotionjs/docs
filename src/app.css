@@ -58,8 +58,7 @@ picture,
 video,
 iframe,
 canvas,
-svg
-{
+svg {
 	display: block;
 	max-width: 100%;
 }

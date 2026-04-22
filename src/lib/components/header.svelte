@@ -1,31 +1,31 @@
 <script lang="ts">
-	import { BookOpenIcon, MoonIcon, SunIcon } from 'lucide-svelte'
+	import { BookOpenIcon, MoonIcon, SunIcon } from 'lucide-svelte';
 
-	type Theme = 'light' | 'dark'
+	type Theme = 'light' | 'dark';
 
-	let theme = $state<Theme>()
+	let theme = $state<Theme>();
 
 	function toggleTheme() {
-		theme = theme === 'dark' ? 'light' : 'dark'
-		setTheme(theme)
+		theme = theme === 'dark' ? 'light' : 'dark';
+		setTheme(theme);
 	}
 
 	function setTheme(theme: Theme) {
-		localStorage.theme = theme
-		document.documentElement.setAttribute('color-scheme', theme)
+		localStorage.theme = theme;
+		document.documentElement.setAttribute('color-scheme', theme);
 	}
 
 	$effect(() => {
-		const colorScheme = document.documentElement.getAttribute('color-scheme')
-		const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)').matches
+		const colorScheme = document.documentElement.getAttribute('color-scheme');
+		const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)').matches;
 
 		if (colorScheme === 'dark' || colorScheme === 'light') {
-			theme = colorScheme
-			return
+			theme = colorScheme;
+			return;
 		}
 
-		theme = prefersColorScheme ? 'light' : 'dark'
-	})
+		theme = prefersColorScheme ? 'light' : 'dark';
+	});
 </script>
 
 <nav>

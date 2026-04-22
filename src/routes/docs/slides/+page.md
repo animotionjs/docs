@@ -14,14 +14,14 @@ To create a slide use the `<Slide>` component inside the `<Presentation>` compon
 
 ```svelte
 <script>
-	import { Presentation, Slide } from '@animotion/core'
+	import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
 	<Slide class="h-full place-content-center place-items-center">
 		<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 	</Slide>
-  
+
 	<Slide class="h-full place-content-center place-items-center">
 		<img class="rounded-lg drop-shadow-sm" src="/nod-of-approval.gif" />
 	</Slide>
@@ -38,7 +38,7 @@ You can use the `in` and `out` props to pass a callback which runs when the slid
 
 ```svelte
 <script>
-	import { Presentation, Slide } from '@animotion/core'
+	import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
@@ -60,14 +60,14 @@ Svelte is a declarative JavaScript framework, so components are a great way to o
 
 ```svelte
 <script>
-  import { Slide } from '@animotion/core'
-  import { tween } from '@animotion/motion'
+	import { Slide } from '@animotion/core';
+	import { tween } from '@animotion/motion';
 
-  let progress = tween(0)
+	let progress = tween(0);
 
 	async function animate() {
-		await progress.to(1_000_000)
-	}  
+		await progress.to(1_000_000);
+	}
 </script>
 
 <button onclick={animate}>
@@ -79,13 +79,13 @@ You can import, and use the `<Progress>` component inside the slide:
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
-  import Progress from '$lib/progress.svelte'
+	import { Presentation, Slide } from '@animotion/core';
+	import Progress from '$lib/progress.svelte';
 </script>
 
 <Presentation>
 	<Slide>
-  	<Progress />
+		<Progress />
 	</Slide>
 </Presentation>
 ```
@@ -96,7 +96,7 @@ You can pass an `options` prop to the `<Presentation>` component:
 
 ```svelte
 <script>
-  import { Presentation } from '@animotion/core'
+	import { Presentation } from '@animotion/core';
 </script>
 
 <Presentation options={{ transition: 'slide' }}>

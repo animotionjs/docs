@@ -4,14 +4,13 @@ Animotion exposes the `Reveal` instance using the `getPresentation` method, enab
 
 ```svelte
 <script>
-	import { getPresentation } from '@animotion/core'
+	import { getPresentation } from '@animotion/core';
 
-	const presentation = getPresentation()
+	const presentation = getPresentation();
 </script>
 
 <button onclick={() => presentation.slides.prev()}>prev</button>
 <button onclick={() => presentation.slides.next()}>next</button>
 ```
-
 
 You can look at the available [API methods](https://revealjs.com/api/).

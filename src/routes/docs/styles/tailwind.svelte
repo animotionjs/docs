@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Embed as Presentation, Slide } from '@animotion/core'
+	import { Embed as Presentation, Slide } from '@animotion/core';
 
-	let circle = 'grid h-[200px] w-[200px] place-content-center rounded-full'
+	let circle = 'grid h-[200px] w-[200px] place-content-center rounded-full';
 </script>
 
 <Presentation>

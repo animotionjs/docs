@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Embed as Presentation, Slide, Transition } from '@animotion/core'
+	import { Embed as Presentation, Slide, Transition } from '@animotion/core';
 
-	let items = $state([1, 2, 3, 4])
-	let layout = $state('flex gap-4')
+	let items = $state([1, 2, 3, 4]);
+	let layout = $state('flex gap-4');
 </script>
 
 <Presentation>

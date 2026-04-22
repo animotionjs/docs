@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Embed as Presentation, Slide, Action } from '@animotion/core'
-	import { tween } from '@animotion/motion'
+	import { Embed as Presentation, Slide, Action } from '@animotion/core';
+	import { tween } from '@animotion/motion';
 
-	let cx = tween(0)
+	let cx = tween(0);
 
 	async function animate() {
-		await cx.to(600)
-		await cx.to(0, { delay: 300 })
+		await cx.to(600);
+		await cx.to(0, { delay: 300 });
 	}
 </script>
 

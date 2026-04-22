@@ -61,7 +61,6 @@ We welcome contributions to improve the Animotion documentation! Here's how you 
    ```
 
 3. **Make your changes**
-
    - Follow the existing code style and conventions
    - Test your changes locally with `pnpm dev`
 

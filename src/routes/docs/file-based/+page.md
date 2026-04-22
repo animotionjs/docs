@@ -9,14 +9,14 @@ This is how you create slides using the default setup:
 ```svelte
 <!-- routes/+page.svelte -->
 <script>
-	import { Presentation, Slide } from '@animotion/core'
+	import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
 	<Slide class="h-full place-content-center place-items-center">
 		<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 	</Slide>
-  
+
 	<Slide class="h-full place-content-center place-items-center">
 		<img class="rounded-lg drop-shadow-sm" src="/nod-of-approval.gif" />
 	</Slide>
@@ -26,8 +26,7 @@ This is how you create slides using the default setup:
 This is how you create slides using file-based slides:
 
 ```svelte
-<!-- slides/100/slide.svelte -->
-<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
+<!-- slides/100/slide.svelte --><p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 ```
 
 ```svelte
@@ -43,40 +42,38 @@ If you need to pass props to the `<Slide>` use `<script module>`:
 
 ```svelte
 <script module>
-	import { defineProps } from '@animotion/core'
+	import { defineProps } from '@animotion/core';
 
 	export const props = defineProps({
 		in: () => alert('in'),
 		out: () => alert('out')
-	})
+	});
 </script>
 
-<!-- /slides/100/slide.svelte -->
-<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
+<!-- /slides/100/slide.svelte --><p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 ```
 
 For regular imports use the `<script>` tag:
 
 ```svelte
 <script module>
-	import { defineProps } from '@animotion/core'
+	import { defineProps } from '@animotion/core';
 
 	export const props = defineProps({
-    in: () => alert('in'),
-    out: () => alert('out')
-	})
+		in: () => alert('in'),
+		out: () => alert('out')
+	});
 </script>
 
 <script>
-  import { Transition } from '@animotion/core'
+	import { Transition } from '@animotion/core';
 </script>
 
 <!-- slides/100/slide.svelte -->
 <Transition>
-  <p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
+	<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 </Transition>
 ```
-
 
 ## File-Based Slides Setup
 
@@ -85,7 +82,7 @@ You can also set up file-based slides yourself by copying this code inside `src/
 ```svelte
 <!-- routes/+page.svelte -->
 <script>
-	import { Presentation, Slides } from '@animotion/core'
+	import { Presentation, Slides } from '@animotion/core';
 </script>
 
 <Presentation
@@ -93,7 +90,7 @@ You can also set up file-based slides yourself by copying this code inside `src/
 		history: true,
 		transition: 'slide',
 		controls: false,
-		progress: true,
+		progress: true
 	}}
 >
 	<Slides center={true} />

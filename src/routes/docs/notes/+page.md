@@ -6,15 +6,15 @@ You can write down notes inside the `<Notes>` component for the current slide wh
 
 ```svelte
 <script>
-  import { Presentation, Slide, Notes } from '@animotion/core'
+	import { Presentation, Slide, Notes } from '@animotion/core';
 </script>
 
 <Presentation>
-  <Slide>
-    <p>Horizontal 1</p>
-    <Notes>Don't make eye contact</Notes>
-  </Slide>
+	<Slide>
+		<p>Horizontal 1</p>
+		<Notes>Don't make eye contact</Notes>
+	</Slide>
 
-  <Slide>Horizontal 2</Slide>
+	<Slide>Horizontal 2</Slide>
 </Presentation>
 ```

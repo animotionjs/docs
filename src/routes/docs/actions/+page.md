@@ -12,9 +12,9 @@ You can use the `<Action>` component to step through the presentation, and run c
 
 ```svelte
 <script lang="ts">
-	import { Presentation, Slide, Code, Action } from '@animotion/core'
+	import { Presentation, Slide, Code, Action } from '@animotion/core';
 
-	let code: ReturnType<typeof Code>
+	let code: ReturnType<typeof Code>;
 </script>
 
 <Presentation>
@@ -49,7 +49,7 @@ Instead of having to define each action separately, you can use the `actions` pr
 ```svelte
 <Action
 	undo={() => {
-		example.selectLines`*`
+		example.selectLines`*`;
 	}}
 	actions={[
 		() => example.selectLines`2`,

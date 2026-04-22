@@ -10,7 +10,7 @@ You can use [KaTeX](https://katex.org/) to write math formulas.
 
 ```svelte
 <script lang="ts">
-	import { Presentation, Slide, Transition } from '@animotion/core'
+	import { Presentation, Slide, Transition } from '@animotion/core';
 </script>
 
 <Presentation>

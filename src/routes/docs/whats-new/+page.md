@@ -15,33 +15,33 @@ Animotion is now a standalone package named `@animotion/core`. This makes it eas
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
+	import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
-  <Slide>
-    <p>🪄 Animotion</p>
-  </Slide>
+	<Slide>
+		<p>🪄 Animotion</p>
+	</Slide>
 </Presentation>
 ```
 
 ## View Transitions API
 
-Animotion takes advantage of the View Transitions API for layout animations. You can use the `<Transition>` component to assign a `view-transition-name` to an element: 
+Animotion takes advantage of the View Transitions API for layout animations. You can use the `<Transition>` component to assign a `view-transition-name` to an element:
 
 > ⚠️ Animotion uses the [View Transitions API (single document)](https://caniuse.com/view-transitions) which is Baseline newly available since Oct 2025. The core presentation features still work in older browsers, but they might not show all transitions.
 
 ```svelte
 <script>
-  import { Presentation, Slide, Transition } from '@animotion/core'
+	import { Presentation, Slide, Transition } from '@animotion/core';
 </script>
 
 <Presentation>
-  <Slide>
-    <Transition>
-      <p>🪄 Animotion</p>
-    </Transition>
-  </Slide>
+	<Slide>
+		<Transition>
+			<p>🪄 Animotion</p>
+		</Transition>
+	</Slide>
 </Presentation>
 ```
 
@@ -53,7 +53,7 @@ The previous `on:in` and `on:out` events are now regular props:
 
 ```svelte
 <script>
-	import { Presentation, Slide } from '@animotion/core'
+	import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
@@ -69,8 +69,8 @@ Animotion uses [signals](https://svelte-5-preview.vercel.app/docs/runes) for rea
 
 ```svelte
 <script>
-  let diameter = $state(4)
-  let radius = $derived(diameter / 2)
+	let diameter = $state(4);
+	let radius = $derived(diameter / 2);
 </script>
 
 <p>Radius of the circle is: {radius}</p>
@@ -80,14 +80,14 @@ The same is true for `tween` which is no longer a Svelte store requiring the `$`
 
 ```svelte
 <script>
-	import { tween } from '@animotion/motion'
+	import { tween } from '@animotion/motion';
 
-	let coords = tween({ x: 0, y: 0 })
+	let coords = tween({ x: 0, y: 0 });
 </script>
 
 <button onclick={() => coords.to({ x: 100, y: 100 })}>
-  x: {coords.x}
-  y: {coords.y}
+	x: {coords.x}
+	y: {coords.y}
 </button>
 ```
 

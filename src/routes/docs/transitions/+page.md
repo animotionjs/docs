@@ -16,23 +16,18 @@ You can use the `<Transition>` component to animate changes in your slide like m
 
 ```svelte
 <script lang="ts">
-	import { Presentation, Slide, Transition } from '@animotion/core'
+	import { Presentation, Slide, Transition } from '@animotion/core';
 
-	let text: HTMLParagraphElement
+	let text: HTMLParagraphElement;
 </script>
 
 <Presentation>
 	<Slide class="h-full place-content-center place-items-center">
 		<Transition visible>
-			<p bind:this={text} class="text-8xl font-bold drop-shadow-sm">
-				🪄 Animotion
-			</p>
+			<p bind:this={text} class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 		</Transition>
 
-		<Transition
-			do={() => text.classList.replace('text-8xl', 'text-6xl')}
-			class="mt-16"
-		>
+		<Transition do={() => text.classList.replace('text-8xl', 'text-6xl')} class="mt-16">
 			<img class="rounded-lg drop-shadow-sm" src="/nod-of-approval.gif" />
 		</Transition>
 	</Slide>
@@ -161,13 +156,7 @@ You can create your own entry and exit animations inside `app.css`:
 
 ```svelte
 {#each items as item, i}
-	<Transition
-		entry="rotate"
-		exit="scale-out"
-		duration={1}
-		delay={i * 0.1}
-		visible
-	/>
+	<Transition entry="rotate" exit="scale-out" duration={1} delay={i * 0.1} visible />
 {/each}
 ```
 
@@ -179,7 +168,7 @@ You can use the `order` prop to specify the order in which the elements should t
 
 ```svelte
 <script>
-	import { Presentation, Slide, Transition } from '@animotion/core'
+	import { Presentation, Slide, Transition } from '@animotion/core';
 </script>
 
 <Presentation>
@@ -202,10 +191,10 @@ You can do impossible layout animations, like animating between a `flex` and `gr
 
 ```svelte
 <script>
-	import { Presentation, Slide, Transition } from '@animotion/core'
+	import { Presentation, Slide, Transition } from '@animotion/core';
 
-	let items = $state([1, 2, 3, 4])
-	let layout = $state('flex gap-4')
+	let items = $state([1, 2, 3, 4]);
+	let layout = $state('flex gap-4');
 </script>
 
 <Presentation>
@@ -224,12 +213,12 @@ You can do impossible layout animations, like animating between a `flex` and `gr
 		<!-- you can pass a transitions array for convenience -->
 		<Transition
 			transitions={[
-				() => layout = 'grid grid-cols-2 grid-rows-2 gap-4',
-				() => items = [4, 3, 2, 1],
-				() => items = [2, 1, 4, 3],
-				() => items = [4, 3, 2, 1],
-				() => items = [1, 2, 3, 4],
-				() => layout = 'flex gap-4'
+				() => (layout = 'grid grid-cols-2 grid-rows-2 gap-4'),
+				() => (items = [4, 3, 2, 1]),
+				() => (items = [2, 1, 4, 3]),
+				() => (items = [4, 3, 2, 1]),
+				() => (items = [1, 2, 3, 4]),
+				() => (layout = 'flex gap-4')
 			]}
 		/>
 	</Slide>

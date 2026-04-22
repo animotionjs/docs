@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Action, Embed as Presentation, Slide } from '@animotion/core'
-	import { tween } from '@animotion/motion'
+	import { Action, Embed as Presentation, Slide } from '@animotion/core';
+	import { tween } from '@animotion/motion';
 
-	let text = tween(1)
+	let text = tween(1);
 
 	async function animate() {
-		await text.to(3)
-		await text.to(1)
+		await text.to(3);
+		await text.to(1);
 	}
 </script>
 

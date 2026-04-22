@@ -12,9 +12,9 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 
 ```svelte
 <script lang="ts">
-	import { Presentation, Slide, Code, Action } from '@animotion/core'
+	import { Presentation, Slide, Code, Action } from '@animotion/core';
 
-	let code: ReturnType<typeof Code>
+	let code: ReturnType<typeof Code>;
 </script>
 
 <Presentation>
@@ -52,10 +52,12 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 
 		<Action do={() => code.selectLines`2,3`} />
 		<Action do={() => code.selectLines`2-3,7`} />
-		<Action do={() => {
-			code.select`double`
-			code.selectAdd`{double}`
-		}} />
+		<Action
+			do={() => {
+				code.select`double`;
+				code.selectAdd`{double}`;
+			}}
+		/>
 		<Action do={() => code.selectLines`*`} />
 	</Slide>
 </Presentation>
@@ -77,7 +79,7 @@ code.update`
 	<button onclick={() => count++}>
 		{double}
 	</button>
-`
+`;
 ```
 
 Animotion uses [Shiki Magic Move](https://shiki-magic-move.netlify.app/) to animate the code changes which does the diffing to know what changed, and then animates the changes.
@@ -97,7 +99,7 @@ Having to pass the entire code string to the `update` method each time is tediou
 		<\/script>
 	`}
 />
-````
+```
 
 ```ts
 // append code with an empty line
@@ -105,13 +107,13 @@ code.append`
 	<button onclick={() => count += 1}>
 		// ...
 	</button>
-`
+`;
 // insert code at line 3 with indent level of 1
-code.insert`3:1 let double = $derived(count * 2)`,
-// replace the exact code
-code.replace('// ...', '{count} * 2 = {double}'),
-// remove line 3 and lines 6 to 8
-code.remove`3,6-8`
+(code.insert`3:1 let double = $derived(count * 2)`,
+	// replace the exact code
+	code.replace('// ...', '{count} * 2 = {double}'),
+	// remove line 3 and lines 6 to 8
+	code.remove`3,6-8`);
 ```
 
 ## Code Selection
@@ -120,39 +122,41 @@ You can select lines of code:
 
 ```ts
 // select line
-code.selectLines`2`
+code.selectLines`2`;
 // select multiple lines
-code.selectLines`2,3`
+code.selectLines`2,3`;
 // select lines range
-code.selectLines`2-3`
+code.selectLines`2-3`;
 // select lines range and lines
-code.selectLines`2-3,7`
+code.selectLines`2-3,7`;
 // select all lines
-code.selectLines`*`
+code.selectLines`*`;
 ```
 
 You can select parts of the code:
 
 ```ts
 // select every token
-code.select`count`
+code.select`count`;
 // select first match
-code.select`count:0`
+code.select`count:0`;
 // select first match on line 4
-code.select`4 count:0`
+code.select`4 count:0`;
 // add another selection
-code.selectAdd`() => count++`
+code.selectAdd`() => count++`;
 ```
 
 The methods return a promise that is resolved when the transition is done:
 
 ```svelte
-<Action do={async () => {
-	await code.selectLines`2,3`
-	await code.selectLines`2-3,7`
-	await code.select`count`
-	await code.selectLines`*`
-}} />
+<Action
+	do={async () => {
+		await code.selectLines`2,3`;
+		await code.selectLines`2-3,7`;
+		await code.select`count`;
+		await code.selectLines`*`;
+	}}
+/>
 ```
 
 ## Code Scrolling
@@ -173,7 +177,7 @@ You might have a scrollable code block:
 You can scroll to a line of code using the `scrollToLine` method:
 
 ```ts
-await code.scrollToLine`2`
+await code.scrollToLine`2`;
 ```
 
 You can hide the scrollbar using CSS:
@@ -188,7 +192,7 @@ You can also create a Tailwind class:
 
 ```css
 @utility no-scrollbar {
-  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+	@apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 ```
 
@@ -206,7 +210,7 @@ The `update`, `selectLines`, and `scrollToLine` tag functions support expression
 <Action
 	do={() => {
 		expression = 'true'
-		code.update`let bool = ${expression}`		
+		code.update`let bool = ${expression}`
 	}}
 >
 ```
@@ -249,7 +253,7 @@ Animotion detects if you're using tabs or spaces and dedents the code for you:
 If you want to opt-out of this feature, you can set `autoIndent` to false:
 
 ```svelte
-<Code	autoIndent={false} />
+<Code autoIndent={false} />
 ```
 
 ## Chaining code animations

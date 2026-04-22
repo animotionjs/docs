@@ -12,9 +12,9 @@ You have complete control over unstyled elements using Tailwind:
 
 ```svelte
 <script>
-	import { Presentation, Slide } from '@animotion/core'
+	import { Presentation, Slide } from '@animotion/core';
 
-	let circle = 'grid h-[200px] w-[200px] place-content-center rounded-full'
+	let circle = 'grid h-[200px] w-[200px] place-content-center rounded-full';
 </script>
 
 <Presentation>
@@ -38,45 +38,45 @@ You can write regular CSS inside a `<style>` tag in Svelte. Styles are scoped to
 
 ```svelte
 <script>
-  import { Presentation, Slide } from '@animotion/core'
+	import { Presentation, Slide } from '@animotion/core';
 </script>
 
 <Presentation>
-  <Slide>
-      <div class="circles">
-        <div class="circle red">red</div>
-        <div class="circle green">green</div>
-        <div class="circle blue">blue</div>
-      </div>
-  </Slide>
+	<Slide>
+		<div class="circles">
+			<div class="circle red">red</div>
+			<div class="circle green">green</div>
+			<div class="circle blue">blue</div>
+		</div>
+	</Slide>
 </Presentation>
 
 <style>
-  .circles {
-    display: flex;
-    gap: 2rem;
-    font-weight: 600;
-    color: #111827;
-  }
+	.circles {
+		display: flex;
+		gap: 2rem;
+		font-weight: 600;
+		color: #111827;
+	}
 
-  .circle {
-    width: 240px;
-    height: 240px;
-    display: grid;
-    place-content: center;
-    border-radius: 50%;
-  }
+	.circle {
+		width: 240px;
+		height: 240px;
+		display: grid;
+		place-content: center;
+		border-radius: 50%;
+	}
 
-  .red {
-    background-color: #f87171;
-  }
+	.red {
+		background-color: #f87171;
+	}
 
-  .green {
-    background-color: #4ade80;
-  }
+	.green {
+		background-color: #4ade80;
+	}
 
-  .blue {
-    background-color: #1e3a8a;
-  }
+	.blue {
+		background-color: #1e3a8a;
+	}
 </style>
 ```

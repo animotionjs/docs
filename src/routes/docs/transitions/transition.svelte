@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Embed as Presentation, Slide, Transition } from '@animotion/core'
+	import { Embed as Presentation, Slide, Transition } from '@animotion/core';
 
-	let text: HTMLParagraphElement
+	let text: HTMLParagraphElement;
 </script>
 
 <Presentation>
