@@ -12,7 +12,7 @@
 <div class="container">
 	<aside class="sections">
 		<div class="sticky">
-			{#each sections as { path, title, section }}
+			{#each sections as { path, title, section } (path ?? section)}
 				{@const active = page.route.id === path}
 				{#if section}
 					<h4 class="section">{section}</h4>

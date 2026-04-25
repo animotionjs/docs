@@ -5,9 +5,7 @@
 <Presentation>
 	<Slide class="h-full place-content-center place-items-center">
 		<Transition>
-			<p>
-				The probability of getting {`\\(k\\)`} heads when flipping {`\\(n\\)`} coins
-			</p>
+			<p>The probability of getting \(k\) heads when flipping \(n\) coins</p>
 		</Transition>
 
 		<Transition>
