@@ -159,6 +159,8 @@ The methods return a promise that is resolved when the transition is done:
 />
 ```
 
+Both the `selectLines` and `select` methods have additive counterparts, `selectLinesAdd` and `selectAdd`, which only add to the previous selection.
+
 ## Code Scrolling
 
 You might have a scrollable code block:
