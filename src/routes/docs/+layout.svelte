@@ -1,12 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
 	import { sections } from '$lib/navigation/navigation';
 	import Links from '$lib/navigation/links.svelte';
 
-	type LayoutProps = { children: Snippet };
-
-	let { children }: LayoutProps = $props();
+	let { children } = $props();
 </script>
 
 <div class="container">

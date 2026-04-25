@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import type { Snippet } from 'svelte';
 	import PageTransition from '$lib/components/transition.svelte';
 	import Header from '$lib/components/header.svelte';
 	import '../app.css';
 
-	type LayoutProps = { children: Snippet };
-
-	let { children }: LayoutProps = $props();
+	let { children } = $props();
 	const { title = 'Animotion' } = $derived(page.data);
+	const isIframe = $derived(page.route.id?.startsWith('/iframe'));
 </script>
 
 <PageTransition />
@@ -37,6 +35,8 @@
 	<meta content="https://animotion.pages.dev/social.png" name="twitter:image" />
 </svelte:head>
 
-<Header />
+{#if !isIframe}
+	<Header />
+{/if}
 
 {@render children()}
