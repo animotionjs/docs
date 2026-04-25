@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Slides from './slides.svelte'
-	import Events from './events.svelte'
-	import Components from './components.svelte'
+	import Slides from './slides.svelte';
+	import Events from './events.svelte';
+	import Components from './components.svelte';
 </script>
 
 # Slides

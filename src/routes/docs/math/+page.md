@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Katex from './katex.svelte'
+	import Katex from './katex.svelte';
 </script>
 
 # Math

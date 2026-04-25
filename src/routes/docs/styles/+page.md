@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Tailwind from './tailwind.svelte'
+	import Tailwind from './tailwind.svelte';
 </script>
 
 # Styling

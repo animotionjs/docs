@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Actions from './actions.svelte'
+	import Actions from './actions.svelte';
 </script>
 
 # Actions

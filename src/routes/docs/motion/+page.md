@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Tween from './tween.svelte'
-  import Scale from './scale.svelte'
-  import Options from './options.svelte'
-  import All from './all.svelte'
+	import Tween from './tween.svelte';
+	import Scale from './scale.svelte';
+	import Options from './options.svelte';
+	import All from './all.svelte';
 </script>
 
 # Motion

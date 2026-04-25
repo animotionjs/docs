@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CodeBlock from './code.svelte'
+	import CodeBlock from './code.svelte';
 </script>
 
 # Code

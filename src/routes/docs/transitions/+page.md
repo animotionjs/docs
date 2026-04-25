@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Transition from './transition.svelte'
-	import TransitionOrder from './order.svelte'
-	import LayoutAnimation from './layout-animation.svelte'
+	import Transition from './transition.svelte';
+	import TransitionOrder from './order.svelte';
+	import LayoutAnimation from './layout-animation.svelte';
 </script>
 
 # Transitions
@@ -77,8 +77,8 @@ This is very useful for revealing or hiding elements like a code block and its o
 		</Transition>
 	{/if}
 
-	<Transition do={() => state = 'code'} />
-	<Transition do={() => state = 'output'} />
+	<Transition do={() => (state = 'code')} />
+	<Transition do={() => (state = 'output')} />
 </Slide>
 ```
 
