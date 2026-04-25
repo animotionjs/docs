@@ -110,6 +110,7 @@ td {
 html {
 	/* 1rem = 10px */
 	font-size: 62.5%;
+	scrollbar-gutter: stable;
 
 	/* typography */
 	--font-size-pre: 1.5rem;
@@ -391,15 +392,25 @@ pre {
 	animation-timing-function: var(--ease);
 }
 
+/* disable position/size morph for persistent shared elements */
+::view-transition-group(nav),
+::view-transition-group(sidebar) {
+	animation: none;
+}
+
+/* hide old snapshot to prevent double-exposure on identical elements */
+::view-transition-old(nav),
+::view-transition-old(sidebar) {
+	display: none;
+}
+
 /* entry transition */
-::view-transition-new(root):only-child,
 ::view-transition-new(sidebar):only-child,
 ::view-transition-new(content):only-child {
 	animation: fade var(--view-transition-duration) var(--ease);
 }
 
 /* exit transition */
-::view-transition-old(root):only-child,
 ::view-transition-old(sidebar):only-child,
 ::view-transition-old(content):only-child {
 	animation: fade var(--view-transition-duration) var(--ease) reverse forwards;

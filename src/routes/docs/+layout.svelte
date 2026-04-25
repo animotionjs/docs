@@ -33,10 +33,6 @@
 	.container {
 		margin-block-start: var(--size-5);
 
-		aside {
-			view-transition-name: sidebar;
-		}
-
 		@media (width > 600px) {
 			display: grid;
 			grid-template-columns: 240px 1fr;
@@ -44,6 +40,8 @@
 	}
 
 	.sections {
+		view-transition-name: sidebar;
+
 		.sticky {
 			position: sticky;
 			top: 100px;
