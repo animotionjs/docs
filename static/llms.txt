@@ -135,7 +135,7 @@ You can override the default transitions in `app.css`:
 
 You can use the `<Transition>` component to animate changes in your slide like magic:
 
-<Transition />
+<Example src="/examples/transitions/transition" />
 
 ```svelte
 <script lang="ts">
@@ -200,8 +200,8 @@ This is very useful for revealing or hiding elements like a code block and its o
     </Transition>
   {/if}
 
-  <Transition do={() => state = 'code'} />
-  <Transition do={() => state = 'output'} />
+  <Transition do={() => (state = 'code')} />
+  <Transition do={() => (state = 'output')} />
 </Slide>
 ```
 
@@ -287,7 +287,7 @@ You can create your own entry and exit animations inside `app.css`:
 
 You can use the `order` prop to specify the order in which the elements should transition:
 
-<TransitionOrder />
+<Example src="/examples/transitions/order" />
 
 ```svelte
 <script>
@@ -310,7 +310,7 @@ You can use the `order` prop to specify the order in which the elements should t
 
 You can do impossible layout animations, like animating between a `flex` and `grid` layout among other things — the only thing you have to do is change the DOM, and leave the rest to Animotion:
 
-<LayoutAnimation />
+<Example src="/examples/transitions/layout-animation" />
 
 ```svelte
 <script>
@@ -1232,9 +1232,7 @@ You can use [KaTeX](https://katex.org/) to write math formulas.
 <Presentation>
   <Slide class="h-full place-content-center place-items-center">
     <Transition>
-      <p>
-        The probability of getting {`\\(k\\)`} heads when flipping {`\\(n\\)`} coins
-      </p>
+      <p>The probability of getting \(k\) heads when flipping \(n\) coins</p>
     </Transition>
 
     <Transition>
