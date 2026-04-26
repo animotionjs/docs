@@ -6,7 +6,7 @@
 
 	let { children } = $props();
 	const { title = 'Animotion' } = $derived(page.data);
-	const isIframe = $derived(page.route.id?.startsWith('/iframe'));
+	const isIframe = $derived(page.route.id?.startsWith('/sandbox'));
 </script>
 
 <PageTransition />

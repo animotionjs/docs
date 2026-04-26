@@ -18,6 +18,7 @@
 	box-sizing: border-box;
 }
 
+/* overrides */
 h1,
 h2,
 h3,
@@ -89,6 +90,15 @@ td {
 	padding: var(--size-2);
 	text-align: left;
 	border: 1px solid hsl(0 0% 100% / 40%);
+}
+
+iframe {
+	border: none;
+}
+
+.reveal {
+	border: 1px solid var(--border);
+	border-radius: var(--radius-1);
 }
 
 /* global */
