@@ -5,7 +5,7 @@
 		'grid h-[180px] w-[180px] place-content-center rounded-2xl border-t-2 border-white bg-gray-200 text-6xl font-semibold text-black shadow-2xl';
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<div class="grid grid-cols-2 grid-rows-2 gap-4">
 			<Transition class={box} order={4}>1</Transition>

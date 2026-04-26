@@ -5,7 +5,7 @@
 	let layout = $state('flex gap-4');
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<div class={layout} style:--gap="var(--size-2)">
 			{#each items as item (item)}

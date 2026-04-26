@@ -4,7 +4,7 @@
 	let text: HTMLParagraphElement;
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<Transition visible>
 			<p bind:this={text} class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>

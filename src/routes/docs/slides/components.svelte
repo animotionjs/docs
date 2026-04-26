@@ -9,7 +9,7 @@
 	}
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<button onclick={animate} class="text-[100px] font-semibold">
 			{progress.current.toLocaleString('en', { maximumFractionDigits: 0 })}

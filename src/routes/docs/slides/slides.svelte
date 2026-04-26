@@ -2,7 +2,7 @@
 	import { Embed as Presentation, Slide } from '@animotion/core';
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 	</Slide>

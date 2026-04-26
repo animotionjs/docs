@@ -10,7 +10,7 @@
 	}
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<p style:scale={text.current}>Motion</p>
 		<Action do={animate} />

@@ -4,7 +4,7 @@
 	let code: Code;
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<Code
 			bind:this={code}

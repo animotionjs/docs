@@ -10,7 +10,7 @@
 	}
 </script>
 
-<Presentation>
+<Presentation options={{ progress: false }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<svg width="800" height="200" viewBox="-100 0 800 200">
 			<circle cx={cx.current} cy={100} r={80} fill="#00ffff" />
