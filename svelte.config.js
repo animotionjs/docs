@@ -6,6 +6,9 @@ import sveltemark from './src/lib/sveltemark/index.js';
 const config = {
 	extensions: ['.svelte', '.md'],
 	preprocess: [sveltemark(), vitePreprocess()],
+	compilerOptions: {
+		warningFilter: (warning) => warning.code !== 'a11y_no_noninteractive_tabindex'
+	},
 	kit: {
 		adapter: adapter()
 	}
