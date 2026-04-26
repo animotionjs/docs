@@ -1,13 +1,13 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { examples } from '$lib/components/sandbox.svelte';
 
-	let { data } = $props();
-
-	const Component = $derived(examples[data.slug]);
+	const slug = $derived(page.params.slug ?? '');
+	const Component = $derived(examples[slug]);
 </script>
 
 {#if Component}
 	<Component />
 {:else}
-	<p>Example "{data.slug}" not found.</p>
+	<p>Example "{slug}" not found.</p>
 {/if}

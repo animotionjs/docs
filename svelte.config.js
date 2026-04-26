@@ -7,10 +7,16 @@ const config = {
 	extensions: ['.svelte', '.md'],
 	preprocess: [sveltemark(), vitePreprocess()],
 	compilerOptions: {
+		experimental: {
+			async: true
+		},
 		warningFilter: (warning) => warning.code !== 'a11y_no_noninteractive_tabindex'
 	},
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		experimental: {
+			remoteFunctions: true
+		}
 	}
 };
 

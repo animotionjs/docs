@@ -2,10 +2,12 @@
 	import { page } from '$app/state';
 	import PageTransition from '$lib/components/transition.svelte';
 	import Header from '$lib/components/header.svelte';
+	import { getTitle } from './data.remote';
 	import '../app.css';
 
 	let { children } = $props();
-	const { title = 'Animotion' } = $derived(page.data);
+
+	const title = $derived(await getTitle(page.route.id ?? '/'));
 	const isIframe = $derived(page.route.id?.startsWith('/sandbox'));
 </script>
 
