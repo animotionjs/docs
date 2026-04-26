@@ -30,7 +30,7 @@
 	.container {
 		margin-block-start: var(--size-5);
 
-		@media (width > 600px) {
+		@media (width > 1200px) {
 			display: grid;
 			grid-template-columns: 240px 1fr;
 		}
