@@ -20,6 +20,4 @@
 	let { slug, title, width = 960, height = 480 }: Props = $props();
 </script>
 
-<!-- TODO: nonnegative tabIndex -->
-
 <iframe src="/sandbox/{slug}" {title} {width} {height} loading="lazy"></iframe>
