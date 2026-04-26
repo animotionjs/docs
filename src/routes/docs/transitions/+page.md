@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Transition from './transition.svelte';
-	import TransitionOrder from './order.svelte';
-	import LayoutAnimation from './layout-animation.svelte';
+	import TransitionOrder from './order.svelte';	
+	import Sandbox from '$lib/components/sandbox.svelte'
 </script>
 
 # Transitions
@@ -187,7 +187,7 @@ You can use the `order` prop to specify the order in which the elements should t
 
 You can do impossible layout animations, like animating between a `flex` and `grid` layout among other things — the only thing you have to do is change the DOM, and leave the rest to Animotion:
 
-<LayoutAnimation />
+<Sandbox slug="layout-animation" />
 
 ```svelte
 <script>
