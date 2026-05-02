@@ -1,6 +1,6 @@
 # Slides
 
-## Creating Slides
+## Creating slides
 
 To create a slide use the `<Slide>` component inside the `<Presentation>` component:
 
@@ -24,7 +24,7 @@ To create a slide use the `<Slide>` component inside the `<Presentation>` compon
 
 The `<Slide>` component uses CSS grid by default for the layout, so it's not necessary to specify the display mode.
 
-## Slide Events
+## Slide events
 
 You can use the `in` and `out` props to pass a callback which runs when the slide enters and exits the viewport:
 
@@ -157,7 +157,7 @@ You can use the `<Transition>` component to animate changes in your slide like m
 </Presentation>
 ```
 
-## How Transitions Work
+## How transitions work
 
 Animotion uses the [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API) to animate the layout of your slides.
 
@@ -215,7 +215,7 @@ If you don't want the `<Transition>` element to affect the layout when using it 
 <!-- content -->
 ```
 
-## Custom Entry And Exit Transitions
+## Custom entry and exit transitions
 
 You can find the default view transition styles in `app.css`:
 
@@ -480,7 +480,7 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 
 You can pick one of many themes that come with Shiki, choose a language, and provide options to the `<Code />` component.
 
-## Animating Code Changes
+## Animating code changes
 
 You can animate changes in your code by using the `update` method:
 
@@ -499,7 +499,7 @@ code.update`
 
 Animotion uses [Shiki Magic Move](https://shiki-magic-move.netlify.app/) to animate the code changes which does the diffing to know what changed, and then animates the changes.
 
-## Experimental Code Update API
+## Experimental code update API
 
 Having to pass the entire code string to the `update` method each time is tedious and repetitive. You can try the experimental code update API to surgically update the code:
 
@@ -531,7 +531,7 @@ code.append`
   code.remove`3,6-8`);
 ```
 
-## Code Selection
+## Code selection
 
 You can select lines of code:
 
@@ -576,7 +576,7 @@ The methods return a promise that is resolved when the transition is done:
 
 Both the `selectLines` and `select` methods have additive counterparts, `selectLinesAdd` and `selectAdd`, which only add to the previous selection.
 
-## Code Scrolling
+## Code scrolling
 
 You might have a scrollable code block:
 
@@ -613,7 +613,7 @@ You can also create a Tailwind class:
 }
 ```
 
-## Using Expressions
+## Using expressions
 
 The `update`, `selectLines`, and `scrollToLine` tag functions support expressions:
 
@@ -632,7 +632,7 @@ The `update`, `selectLines`, and `scrollToLine` tag functions support expression
 >
 ```
 
-## Code Indentation
+## Code indentation
 
 Indenting code creates extra whitespace:
 
@@ -745,7 +745,7 @@ Having a closing tag like `</script>` in your code block is going to cause probl
 
 # Motion
 
-## Procedural Animations
+## Procedural animations
 
 Sometimes you need to animate values outside of CSS like SVG and Canvas values. Instead of reaching for a JavaScript library, you can use Motion by importing `@animotion/motion`:
 
@@ -891,7 +891,7 @@ If you want to play multiple animations at the same time without having to think
 </Presentation>
 ```
 
-## Sound Effects
+## Sound effects
 
 Besides playing animations you can play sounds using the `sfx` method. After you place your sounds in the `static` folder at the root of your project, they
 become available from the root `/` of your site:
@@ -917,10 +917,34 @@ become available from the root `/` of your site:
 </Presentation>
 ```
 
-## Reset
+## Convenience methods
+
+You can round the numbers of the entire animated object instead of each object property separately using the `.rounded`, or `.round(n)` method:
+
+```svelte
+<script>
+  import { Presentation, Slide } from '@animotion/core';
+  import { tween } from '@animotion/motion';
+
+  let value = tween({ x: 0, y: 0 });
+</script>
+
+<Presentation>
+  <Slide>
+    <!-- 👎 before: -->
+    <p>x: {value.x.toFixed(0)}, y: {value.y.toFixed(0)}</p>
+
+    <!-- 👍 after: -->
+    <p>{JSON.stringify(value.current.rounded)}</p>
+
+    <!-- 👍 if you want more precision -->
+    <p>{JSON.stringify(value.current.round(2))}</p>
+  </Slide>
+</Presentation>
+```
 
 Instead of reloading the page to reset the state of your animation,
-you can use the `reset` method on the `tween` to reset the animation back to its initial state.
+you can use the `reset` method on the `tween` to reset the animation value back to its initial state.
 
 ```svelte
 <script>
@@ -1016,7 +1040,7 @@ You can write regular CSS inside a `<style>` tag in Svelte. Styles are scoped to
 </style>
 ```
 
-## Programmatic Slides
+## Programmatic slides
 
 Animotion exposes the `Reveal` instance using the `getPresentation` method, enabling you to use the API to control slides programmatically:
 
@@ -1037,7 +1061,7 @@ You can look at the available [API methods](https://revealjs.com/api/).
 
 You can have slides in one file or split them into multiple files by default, but Animotion also provides a file-based slides option during the setup if you want the slides to be managed for you.
 
-## Using File-based Slides
+## Using file-based slides
 
 This is how you create slides using the default setup:
 
@@ -1071,7 +1095,7 @@ This is how you create slides using file-based slides:
 
 You can number the slides however you want since slides are sorted lowest to highest based on the number — another benefit of file-based slides is that you can have assets related to the slide in the same folder.
 
-## Passing Props
+## Passing props
 
 If you need to pass props to the `<Slide>` use `<script module>`:
 
@@ -1110,7 +1134,7 @@ For regular imports use the `<script>` tag:
 </Transition>
 ```
 
-## File-Based Slides Setup
+## File-based slides setup
 
 You can also set up file-based slides yourself by copying this code inside `src/routes/+page.svelte`:
 
@@ -1134,9 +1158,9 @@ You can also set up file-based slides yourself by copying this code inside `src/
 
 After that you can create slides inside the `src/slides` folder.
 
-# Recording Videos
+# Recording videos
 
-## Using The Recorder
+## Using the recorder
 
 You can record your presentation using the `<Recorder>` component:
 
@@ -1151,7 +1175,7 @@ You can record your presentation using the `<Recorder>` component:
 - After you import the `<Recorder>` component you're going to be asked to give permission to share your screen, and microphone
 - Select the window, or screen you want to record, and press `F11` to fullscreen your browser and start recording
 
-## Default Settings
+## Default settings
 
 The default settings give you a nice balance of quality, and file size but you can use the [YouTube recommended upload encoding settings](https://support.google.com/youtube/answer/1722171?hl=en#zippy=%2Cbitrate) to change it.
 
@@ -1183,7 +1207,7 @@ These are the default video settings:
 - **Timer** enabled
 - **Microphone** enabled
 
-## You Can Change The Video Type
+## You can change the video type
 
 You can change the video container, and codecs like in this example which uses the [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#avc_h.264) video codec, and [AAC](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#aac_advanced_audio_coding) for the audio codec:
 
