@@ -2,7 +2,7 @@
 
 You can have slides in one file or split them into multiple files by default, but Animotion also provides a file-based slides option during the setup if you want the slides to be managed for you.
 
-## Using File-based Slides
+## Using file-based slides
 
 This is how you create slides using the default setup:
 
@@ -36,7 +36,7 @@ This is how you create slides using file-based slides:
 
 You can number the slides however you want since slides are sorted lowest to highest based on the number — another benefit of file-based slides is that you can have assets related to the slide in the same folder.
 
-## Passing Props
+## Passing props
 
 If you need to pass props to the `<Slide>` use `<script module>`:
 
@@ -75,7 +75,7 @@ For regular imports use the `<script>` tag:
 </Transition>
 ```
 
-## File-Based Slides Setup
+## File-based slides setup
 
 You can also set up file-based slides yourself by copying this code inside `src/routes/+page.svelte`:
 

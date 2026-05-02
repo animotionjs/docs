@@ -2,7 +2,7 @@
 
 Animotion provides LLM-friendly documentation that you can use to help language models understand the framework better.
 
-## LLM Documentation
+## LLM documentation
 
 You can access the complete Animotion documentation in a format optimized for LLMs at:
 

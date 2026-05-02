@@ -34,7 +34,7 @@ You can use the `<Transition>` component to animate changes in your slide like m
 </Presentation>
 ```
 
-## How Transitions Work
+## How transitions work
 
 Animotion uses the [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API) to animate the layout of your slides.
 
@@ -92,7 +92,7 @@ If you don't want the `<Transition>` element to affect the layout when using it 
 <!-- content -->
 ```
 
-## Custom Entry And Exit Transitions
+## Custom entry and exit transitions
 
 You can find the default view transition styles in `app.css`:
 

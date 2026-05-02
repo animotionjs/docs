@@ -65,7 +65,7 @@ The `<Code>` component uses [Shiki](https://shiki.style/) for beautiful syntax h
 
 You can pick one of many themes that come with Shiki, choose a language, and provide options to the `<Code />` component.
 
-## Animating Code Changes
+## Animating code changes
 
 You can animate changes in your code by using the `update` method:
 
@@ -84,7 +84,7 @@ code.update`
 
 Animotion uses [Shiki Magic Move](https://shiki-magic-move.netlify.app/) to animate the code changes which does the diffing to know what changed, and then animates the changes.
 
-## Experimental Code Update API
+## Experimental code update API
 
 Having to pass the entire code string to the `update` method each time is tedious and repetitive. You can try the experimental code update API to surgically update the code:
 
@@ -116,7 +116,7 @@ code.append`
 	code.remove`3,6-8`);
 ```
 
-## Code Selection
+## Code selection
 
 You can select lines of code:
 
@@ -161,7 +161,7 @@ The methods return a promise that is resolved when the transition is done:
 
 Both the `selectLines` and `select` methods have additive counterparts, `selectLinesAdd` and `selectAdd`, which only add to the previous selection.
 
-## Code Scrolling
+## Code scrolling
 
 You might have a scrollable code block:
 
@@ -198,7 +198,7 @@ You can also create a Tailwind class:
 }
 ```
 
-## Using Expressions
+## Using expressions
 
 The `update`, `selectLines`, and `scrollToLine` tag functions support expressions:
 
@@ -217,7 +217,7 @@ The `update`, `selectLines`, and `scrollToLine` tag functions support expression
 >
 ```
 
-## Code Indentation
+## Code indentation
 
 Indenting code creates extra whitespace:
 

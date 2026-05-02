@@ -6,7 +6,7 @@
 
 # Slides
 
-## Creating Slides
+## Creating slides
 
 To create a slide use the `<Slide>` component inside the `<Presentation>` component:
 
@@ -30,7 +30,7 @@ To create a slide use the `<Slide>` component inside the `<Presentation>` compon
 
 The `<Slide>` component uses CSS grid by default for the layout, so it's not necessary to specify the display mode.
 
-## Slide Events
+## Slide events
 
 You can use the `in` and `out` props to pass a callback which runs when the slide enters and exits the viewport:
 

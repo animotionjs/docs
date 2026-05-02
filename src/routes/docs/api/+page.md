@@ -1,4 +1,4 @@
-## Programmatic Slides
+## Programmatic slides
 
 Animotion exposes the `Reveal` instance using the `getPresentation` method, enabling you to use the API to control slides programmatically:
 

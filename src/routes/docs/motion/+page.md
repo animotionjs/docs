@@ -7,7 +7,7 @@
 
 # Motion
 
-## Procedural Animations
+## Procedural animations
 
 Sometimes you need to animate values outside of CSS like SVG and Canvas values. Instead of reaching for a JavaScript library, you can use Motion by importing `@animotion/motion`:
 
@@ -206,7 +206,7 @@ You can round the numbers of the entire animated object instead of each object p
 ```
 
 Instead of reloading the page to reset the state of your animation,
-you can use the `reset` method on the `tween` to reset the animation back to its initial state.
+you can use the `reset` method on the `tween` to reset the animation value back to its initial state.
 
 ```svelte
 <script>

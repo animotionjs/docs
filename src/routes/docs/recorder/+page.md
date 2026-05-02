@@ -1,6 +1,6 @@
-# Recording Videos
+# Recording videos
 
-## Using The Recorder
+## Using the recorder
 
 You can record your presentation using the `<Recorder>` component:
 
@@ -15,7 +15,7 @@ You can record your presentation using the `<Recorder>` component:
 - After you import the `<Recorder>` component you're going to be asked to give permission to share your screen, and microphone
 - Select the window, or screen you want to record, and press `F11` to fullscreen your browser and start recording
 
-## Default Settings
+## Default settings
 
 The default settings give you a nice balance of quality, and file size but you can use the [YouTube recommended upload encoding settings](https://support.google.com/youtube/answer/1722171?hl=en#zippy=%2Cbitrate) to change it.
 
@@ -47,7 +47,7 @@ These are the default video settings:
 - **Timer** enabled
 - **Microphone** enabled
 
-## You Can Change The Video Type
+## You can change the video type
 
 You can change the video container, and codecs like in this example which uses the [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#avc_h.264) video codec, and [AAC](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#aac_advanced_audio_coding) for the audio codec:
 

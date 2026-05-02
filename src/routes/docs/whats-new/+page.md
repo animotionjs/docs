@@ -9,7 +9,7 @@
 - [SvelteKit](https://kit.svelte.dev/) template
 - [Tailwind 4](https://tailwindcss.com/blog/tailwindcss-v4-alpha) for styling
 
-## Animotion Core
+## Animotion core
 
 Animotion is now a standalone package named `@animotion/core`. This makes it easy to update to future versions, and using Animotion inside existing Svelte projects:
 
@@ -47,7 +47,7 @@ Animotion takes advantage of the View Transitions API for layout animations. You
 
 Besides [transitions](/docs/transitions), you can use [actions](/docs/actions) which lets you step through the slide, and run code that updates the presentation.
 
-## Slide Events
+## Slide events
 
 The previous `on:in` and `on:out` events are now regular props:
 
