@@ -153,7 +153,7 @@ If you want to play multiple animations at the same time without having to think
 </Presentation>
 ```
 
-## Sound Effects
+## Sound effects
 
 Besides playing animations you can play sounds using the `sfx` method. After you place your sounds in the `static` folder at the root of your project, they
 become available from the root `/` of your site:
@@ -179,7 +179,31 @@ become available from the root `/` of your site:
 </Presentation>
 ```
 
-## Reset
+## Convenience methods
+
+You can round the numbers of the entire animated object instead of each object property separately using the `.rounded`, or `.round(n)` method:
+
+```svelte
+<script>
+	import { Presentation, Slide } from '@animotion/core';
+	import { tween } from '@animotion/motion';
+
+	let value = tween({ x: 0, y: 0 });
+</script>
+
+<Presentation>
+	<Slide>
+		<!-- 👎 before: -->
+		<p>x: {value.x.toFixed(0)}, y: {value.y.toFixed(0)}</p>
+
+		<!-- 👍 after: -->
+		<p>{JSON.stringify(value.current.rounded)}</p>
+
+		<!-- 👍 if you want more precision -->
+		<p>{JSON.stringify(value.current.round(2))}</p>
+	</Slide>
+</Presentation>
+```
 
 Instead of reloading the page to reset the state of your animation,
 you can use the `reset` method on the `tween` to reset the animation back to its initial state.
