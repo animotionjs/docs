@@ -52,9 +52,9 @@ function sveltemark() {
 		 * Convert Markdown to HTML.
 		 * @param {Object} params
 		 * @param {string} params.content
-		 * @param {string} params.filename
+		 * @param {string} [params.filename]
 		 */
-		async markup({ content, filename }) {
+		async markup({ content, filename = '' }) {
 			if (filename.endsWith('.md')) {
 				const html = await parseMarkdown(content);
 				const code = replace(html);
