@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { getNavigation } from './navigation';
-	import { ArrowLeft, ArrowRight } from 'lucide-svelte';
+	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
 
 	const path = $derived(page.route.id);
 	const { previous, next } = $derived(getNavigation(path));

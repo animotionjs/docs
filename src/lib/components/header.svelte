@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BookOpenIcon, MoonIcon, SunIcon } from 'lucide-svelte';
+	import { BookOpen, Moon, Sun } from '@lucide/svelte';
 
 	type Theme = 'light' | 'dark';
 
@@ -41,7 +41,7 @@
 
 		<div class="right-side flex-items-center space-x" style:--margin="var(--size-3)">
 			<a class="icon" href="/docs" title="Docs">
-				<BookOpenIcon size="20" />
+				<BookOpen size="20" />
 			</a>
 
 			<a
@@ -88,9 +88,9 @@
 
 			<button onclick={toggleTheme} class="icon" aria-label="Toggle {theme} mode">
 				{#if theme === 'dark'}
-					<SunIcon size="20" />
+					<Sun size="20" />
 				{:else}
-					<MoonIcon size="20" />
+					<Moon size="20" />
 				{/if}
 			</button>
 		</div>
