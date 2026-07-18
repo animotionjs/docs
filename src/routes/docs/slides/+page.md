@@ -92,7 +92,7 @@ You can import, and use the `<Progress>` component inside the slide:
 
 ## Presentation Options
 
-The `disableLayout` option toggles the built-in Reveal.js layout engine and enforces a fixed aspect ratio, auto-centers content, and scales slides uniformly using CSS transforms to fit any screen size. It's disabled by default, but you can enable it through the `options` prop:
+The `disableLayout` option toggles the built-in Reveal.js layout engine and enforces a fixed aspect ratio, auto-centers content, and scales slides uniformly using CSS transforms to fit any screen size. You can disable it through the `options` prop if you want control over the layout:
 
 ```svelte
 <script>
@@ -104,8 +104,8 @@ The `disableLayout` option toggles the built-in Reveal.js layout engine and enfo
 	width: 960px,
 	height: 700px,
 
-	// enable the default layout
-	disableLayout: false,
+	// disable the default layout
+	disableLayout: true,
 
 	// other options
 	transition: 'slide',
