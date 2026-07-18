@@ -50,8 +50,8 @@ Instead of having to define each action separately, you can use the `actions` pr
 <Action
 	actions={[
 		() => code.selectLines`2`,
-		() => code.selectLines`5 count ++`,
-		() => code.selectLines`{count}`,
+		() => code.select`5 count ++`,
+		() => code.select`{count}`,
 		() => code.selectLines`*`
 	]}
 />
