@@ -2,7 +2,7 @@
 
 Animotion uses [SvelteKit](https://kit.svelte.dev/) as the template, so you can deploy your presentation anywhere where JavaScript runs using one of the [SvelteKit adapters](https://kit.svelte.dev/docs/adapters).
 
-Here is a list of the official adapters:
+Here's a list of the official adapters:
 
 - [Cloudflare Pages](https://kit.svelte.dev/docs/adapter-cloudflare)
 - [Cloudflare Workers](https://kit.svelte.dev/docs/adapter-cloudflare-workers)

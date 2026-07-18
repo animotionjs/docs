@@ -109,11 +109,11 @@ code.append`
 	</button>
 `;
 // insert code at line 3 with indent level of 1
-(code.insert`3:1 let double = $derived(count * 2);`,
-	// replace the exact code
-	code.replace('// ...', '{count} * 2 = {double}'),
-	// remove line 3 and lines 6 to 8
-	code.remove`3,6-8`);
+code.insert`3:1 let double = $derived(count * 2);`;
+// replace the exact code
+code.replace('// ...', '{count} * 2 = {double}');
+// remove line 3 and lines 6 to 8
+code.remove`3,6-8`;
 ```
 
 ## Code selection

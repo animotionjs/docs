@@ -47,7 +47,7 @@ These are the default video settings:
 - **Timer** enabled
 - **Microphone** enabled
 
-## You can change the video type
+## Video output format
 
 You can change the video container, and codecs like in this example which uses the [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#avc_h.264) video codec, and [AAC](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#aac_advanced_audio_coding) for the audio codec:
 

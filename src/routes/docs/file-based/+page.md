@@ -26,7 +26,8 @@ This is how you create slides using the default setup:
 This is how you create slides using file-based slides:
 
 ```svelte
-<!-- slides/100/slide.svelte --><p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
+<!-- slides/100/slide.svelte -->
+<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 ```
 
 ```svelte
@@ -50,7 +51,8 @@ If you need to pass props to the `<Slide>` use `<script module>`:
 	});
 </script>
 
-<!-- /slides/100/slide.svelte --><p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
+<!-- /slides/100/slide.svelte -->
+<p class="text-8xl font-bold drop-shadow-sm">🪄 Animotion</p>
 ```
 
 For regular imports use the `<script>` tag:
@@ -85,14 +87,7 @@ You can also set up file-based slides yourself by copying this code inside `src/
 	import { Presentation, Slides } from '@animotion/core';
 </script>
 
-<Presentation
-	options={{
-		history: true,
-		transition: 'slide',
-		controls: false,
-		progress: true
-	}}
->
+<Presentation>
 	<Slides center={true} />
 </Presentation>
 ```

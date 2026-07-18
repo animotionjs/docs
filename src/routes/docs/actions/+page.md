@@ -48,14 +48,11 @@ Instead of having to define each action separately, you can use the `actions` pr
 
 ```svelte
 <Action
-	undo={() => {
-		example.selectLines`*`;
-	}}
 	actions={[
-		() => example.selectLines`2`,
-		() => example.selectLines`5 count ++`,
-		() => example.selectLines`{count}`,
-		() => example.selectLines`*`
+		() => code.selectLines`2`,
+		() => code.selectLines`5 count ++`,
+		() => code.selectLines`{count}`,
+		() => code.selectLines`*`
 	]}
 />
 ```
@@ -67,6 +64,7 @@ You can pass an optional `undo` prop with a callback to the `<Action>` component
 ```svelte
 <Action
 	do={() => /* ... */}
+	actions={() => /* ... */}
 	undo={() => /* ... */}
 />
 ```

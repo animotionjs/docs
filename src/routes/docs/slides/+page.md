@@ -90,25 +90,44 @@ You can import, and use the `<Progress>` component inside the slide:
 </Presentation>
 ```
 
-## Options
+## Presentation Options
 
-You can pass an `options` prop to the `<Presentation>` component:
+The `disableLayout` option toggles the built-in Reveal.js layout engine and enforces a fixed aspect ratio, auto-centers content, and scales slides uniformly using CSS transforms to fit any screen size. It's disabled by default, but you can enable it through the `options` prop:
 
 ```svelte
 <script>
 	import { Presentation } from '@animotion/core';
 </script>
 
-<Presentation options={{ transition: 'slide' }}>
+<Presentation options={{
+	// default aspect ratio
+	width: 960px,
+	height: 700px,
+
+	// enable the default layout
+	disableLayout: false,
+
+	// other options
+	transition: 'slide',
+	display: 'grid'
+}}>
 	<!-- ... -->
 </Presentation>
 ```
 
-You can change the slide animation, show or hide the controls, and show the current slide in the URL hash among other options.
+You might have noticed that in the examples we use CSS grid layout properties, but don't specify `grid` for the slide display. That's because the default `display` option is set to `grid`.
+
+```svelte
+<Slide class="h-full place-content-center place-items-center">
+	<!-- centered -->
+</Slide>
+```
+
+You can change the slide animation, show or hide the controls, and show the current slide in the URL hash among other options. You can find the [default Animotion presentation options](https://github.com/animotionjs/animotion/blob/main/src/lib/components/presentation.svelte#L30-L65) in the source code on GitHub.
 
 ## Custom slide transitions
 
-You can override the default transitions in `app.css`:
+If you want, you can override the default slide transitions in `app.css`:
 
 ```css
 .reveal .slides > section {
