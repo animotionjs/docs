@@ -1,4 +1,4 @@
-<script module>
+<script module lang="ts">
 	import type { Component } from 'svelte';
 	import LayoutAnimation from '../../routes/docs/transitions/layout-animation.svelte';
 
