@@ -47,6 +47,10 @@
 			text-decoration: underline wavy;
 			text-decoration-color: var(--brand);
 
+			&::after {
+				display: none;
+			}
+
 			&:hover {
 				color: var(--brand);
 			}
