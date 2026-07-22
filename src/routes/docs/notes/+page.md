@@ -9,7 +9,7 @@ You can write down notes inside the `<Notes>` component for the current slide wh
 	import { Presentation, Slide, Notes } from '@animotion/core';
 </script>
 
-<Presentation>
+<Presentation plugins={{ notes: true }}>
 	<Slide>
 		<p>Horizontal 1</p>
 		<Notes>Don't make eye contact</Notes>

@@ -13,7 +13,7 @@ You can use [KaTeX](https://katex.org/) to write math formulas.
 	import { Presentation, Slide, Transition } from '@animotion/core';
 </script>
 
-<Presentation>
+<Presentation plugins={{ math: true }}>
 	<Slide class="h-full place-content-center place-items-center">
 		<Transition>
 			<p>The probability of getting \(k\) heads when flipping \(n\) coins</p>
